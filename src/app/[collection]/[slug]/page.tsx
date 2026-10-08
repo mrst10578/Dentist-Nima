@@ -5,7 +5,7 @@ import { ArrowRight, FileClock, Layers3 } from "lucide-react";
 import { notFound } from "next/navigation";
 
 import { AssetFrame } from "@/components/asset-frame";
-import { collectionIds, collections, entries, getEntry, isCollectionId } from "@/lib/portfolio";
+import { collections, entries, getEntry, isCollectionId } from "@/lib/portfolio";
 
 type Props = { params: Promise<{ collection: string; slug: string }> };
 

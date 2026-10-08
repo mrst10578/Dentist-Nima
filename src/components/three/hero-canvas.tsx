@@ -43,9 +43,9 @@ export function HeroCanvas() {
       }
 
       try {
-        const module = await import("./scene");
+        const sceneModule = await import("./scene");
         if (cancelled || !target.current) return;
-        dispose = module.mountBioGlassScene(target.current);
+        dispose = sceneModule.mountBioGlassScene(target.current);
         setState("ready");
       } catch (error) {
         console.warn("BioGlass 3D preview unavailable; using static art.", error);
