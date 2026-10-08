@@ -1,96 +1,33 @@
-# starter-web
 
-A clean, production-oriented Next.js starter for client websites and general web apps.
+# BioGlass Studio
 
-## What this starter is for
+Asset-first dental student research and presentation portfolio, built inside the existing Next.js starter-web foundation.
 
-Use this repository when the project is a normal website or web application and does not need a more specialized starter such as SaaS, AI, CMS, or Learning.
+## Status
+**Phase 1: structural preview.** Public pages and routes are ready, but the entries are explicitly demo layouts. No real papers, patient photographs, presentation PDFs or generated final assets are bundled.
 
-## Core stack
+## Architecture
+- Next.js 16 App Router, React 19, strict TypeScript and Tailwind CSS 4.
+- Server-rendered RTL/Farsi layout and responsive BioGlass design tokens.
+- Routes: /, /research, /projects, /presentations, /gallery, /about and detail pages under each collection.
+- Asset-first placeholders powered by src/lib/portfolio.ts and src/components/asset-frame.tsx.
+- Portfolio content registry is a small typed local data structure. No backend or CMS yet.
+- No new dependencies have been introduced.
 
-- Next.js 16.3.5
-- React 19.2.8
-- TypeScript 5.x
-- Tailwind CSS 4.3.3
-- shadcn-compatible component structure
-- Vitest unit tests
-- Playwright E2E smoke tests
-- GitHub Actions CI
+## Develop
+1. npm ci
+2. npm run dev
+3. npm run verify
+4. npm run test:e2e
 
-React is intentionally pinned to the version used by the current official create-next-app template instead of automatically chasing the newest React release.
+## Creating new content
+Add vetted records to entries in src/lib/portfolio.ts, using an existing collection, unique slug, and approved asset key. Remove the sample layouts when replacing them with real work.
 
-## Included
+## Asset rollout
+Follow docs/ASSET-PRODUCTION.md. Create an optimized real image, place it in public/assets/ and explicitly enable its path in activeAssets. Until enabled, the slot stays an accessible designed placeholder instead of generating a missing-image request.
 
-- App Router
-- strict TypeScript
-- responsive starter page
-- SEO metadata baseline
-- robots + sitemap
-- loading, error, and not-found states
-- accessible UI button primitive
-- Tailwind class utility
-- ESLint
-- unit test baseline
-- E2E smoke test
-- CI verification
-- AI coding rules in `AGENTS.md`
+## Privacy and publication
+Do not publish identifying clinical photos, patient records, fabricated achievements, or unlicensed figures. Site currently uses robots noindex while content and owner identity remain incomplete. Set a real NEXT_PUBLIC_SITE_URL and revisit robots/sitemap at launch.
 
-## Not included
-
-These belong to feature packs and must be added only when the project needs them:
-
-- authentication
-- database
-- storage
-- payments
-- CMS
-- AI / RAG
-- analytics
-- monitoring
-- search
-- email
-
-## Start a project
-
-1. Create a new repository from this template.
-2. Copy `.env.example` to `.env.local`.
-3. Install dependencies:
-
-```bash
-npm install
-```
-
-4. Run:
-
-```bash
-npm run dev
-```
-
-## Verification
-
-```bash
-npm run verify
-npm run test:e2e
-```
-
-The GitHub Actions workflow runs lint, typecheck, unit tests, production build, and Chromium E2E smoke tests.
-
-## Feature packs
-
-The source of truth for optional capabilities lives in the separate `pro-web-toolkit` repository. Add only the packs required by the client brief.
-
-<!-- TOOLKIT-LINK:BEGIN -->
-
-## Professional Web Toolkit
-
-This repository is the **starter-web** starter in the private Professional Web Toolkit.
-
-- Toolkit source of truth: `mrst10578/pro-web-toolkit`
-- Starter registry key: `starter-web`
-- Starter version: `0.1.0`
-- Maturity: `experimental`
-- Optional capabilities come from Feature Packs in the toolkit; do not hard-code unused providers into this starter.
-- Repository-specific wiring metadata: `starter.yml`
-- Composition rules: `TOOLKIT.md`
-
-<!-- TOOLKIT-LINK:END -->
+## Toolkit
+This project originally came from mrst10578/starter-web and retains its verification scripts and lightweight foundation. Optional feature packs should be added only for actual requirements.

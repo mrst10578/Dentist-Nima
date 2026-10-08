@@ -1,119 +1,116 @@
+
 import Link from "next/link";
 import {
-  ArrowRight,
-  CheckCircle2,
+  ArrowLeft,
+  ArrowUpLeft,
+  BookOpenText,
+  ChevronLeft,
+  FlaskConical,
   Layers3,
-  ShieldCheck,
+  Microscope,
+  Presentation,
   Sparkles,
 } from "lucide-react";
 
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { AssetFrame } from "@/components/asset-frame";
+import { PortfolioCard } from "@/components/portfolio-card";
+import { collections, entries } from "@/lib/portfolio";
 
-const principles = [
-  {
-    icon: Layers3,
-    title: "Small core",
-    description:
-      "Start with the web foundation only. Product capabilities are added later as feature packs.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Production baseline",
-    description:
-      "Strict typing, linting, build checks, unit tests, E2E smoke tests, and explicit error states are already wired.",
-  },
-  {
-    icon: Sparkles,
-    title: "AI-friendly",
-    description:
-      "AGENTS.md and clear repository boundaries make the starter predictable for AI-assisted implementation.",
-  },
-];
+const collectionLinks = [
+  { id: "research", icon: BookOpenText },
+  { id: "projects", icon: FlaskConical },
+  { id: "presentations", icon: Presentation },
+  { id: "gallery", icon: Microscope },
+] as const;
 
 export default function Home() {
   return (
     <main id="main-content">
-      <section className="mx-auto flex min-h-[72vh] max-w-6xl flex-col justify-center px-6 py-20 sm:px-8 lg:px-10">
-        <div className="max-w-3xl">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border bg-card px-3 py-1 text-sm text-muted-foreground">
-            <CheckCircle2 className="size-4" aria-hidden="true" />
-            Starter is running
-          </div>
-
-          <h1 className="text-balance text-4xl font-semibold tracking-tight sm:text-6xl">
-            Build client websites from a clean baseline.
+      <section className="hero site-container" aria-labelledby="hero-heading">
+        <div className="hero-copy">
+          <div className="eyebrow"><span className="pulse-dot" /> DIGITAL DENTAL PORTFOLIO <Sparkles size={14} /></div>
+          <p className="hero-pretitle">علم. کنجکاوی. ساختن.</p>
+          <h1 id="hero-heading">
+            جایی برای ثبت
+            <br />
+            <span>مسیر کشف و پژوهش.</span>
           </h1>
-
-          <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-muted-foreground">
-            A deliberately small Next.js foundation with professional defaults.
-            Add business capabilities only when the client brief requires them.
+          <p className="hero-description">
+            یک فضای شخصی برای گردآوری تحقیقات، پروژه‌های دانشگاهی،
+            ارائه‌ها و تجربه‌های علمی در دنیای دندان‌پزشکی.
           </p>
-
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link
-              href="#principles"
-              className={cn(buttonVariants({ size: "lg" }), "group")}
-            >
-              See the baseline
-              <ArrowRight
-                className="size-4 transition-transform group-hover:translate-x-0.5"
-                aria-hidden="true"
-              />
+          <div className="hero-actions">
+            <Link href="/research" className="button-primary">
+              کشف آرشیو علمی <ArrowUpLeft size={19} aria-hidden="true" />
             </Link>
-            <a
-              href="https://nextjs.org/docs"
-              target="_blank"
-              rel="noreferrer"
-              className={buttonVariants({ variant: "outline", size: "lg" })}
-            >
-              Next.js docs
-            </a>
+            <Link href="/about" className="button-quiet">
+              آشنایی بیشتر <ArrowLeft size={18} aria-hidden="true" />
+            </Link>
           </div>
+          <div className="hero-footnote">
+            <span className="index-marker">01 / 04</span>
+            <span>پژوهش • پروژه • ارائه • گالری</span>
+          </div>
+        </div>
+        <div className="hero-display">
+          <div className="hero-display-frame glass-panel">
+            <div className="display-topline"><span>VISUAL LAB / OBJECT 001</span><span className="crosshair">+</span></div>
+            <AssetFrame asset="hero-molar" className="hero-asset" priority />
+            <div className="display-caption">
+              <div><span className="display-kicker">COMING ASSET</span><strong>Dental structure study</strong></div>
+              <span className="display-number">01</span>
+            </div>
+          </div>
+          <div className="floating-chip glass-panel"><Layers3 size={18} /><span>Asset-first<br /><b>DESIGN SYSTEM</b></span></div>
         </div>
       </section>
 
-      <section
-        id="principles"
-        aria-labelledby="principles-title"
-        className="border-y bg-card"
-      >
-        <div className="mx-auto max-w-6xl px-6 py-16 sm:px-8 lg:px-10">
-          <div className="max-w-2xl">
-            <p className="text-sm font-medium text-muted-foreground">
-              Starter contract
-            </p>
-            <h2
-              id="principles-title"
-              className="mt-2 text-3xl font-semibold tracking-tight"
-            >
-              Enough foundation. No speculative stack.
-            </h2>
-          </div>
+      <section className="intro-strip site-container" aria-label="معرفی سایت">
+        <div className="section-index">THE IDEA <span> / 001</span></div>
+        <p>یک ویترین علمی مستقل؛ <strong>هر فایل، تصویر و ایده در جای درست خودش.</strong></p>
+        <div className="tiny-orbit" aria-hidden="true">✳</div>
+      </section>
 
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
-            {principles.map(({ icon: Icon, title, description }) => (
-              <article
-                key={title}
-                className="rounded-xl border bg-background p-6 shadow-sm"
-              >
-                <div className="mb-5 inline-flex rounded-lg bg-secondary p-2">
-                  <Icon className="size-5" aria-hidden="true" />
-                </div>
-                <h3 className="font-semibold">{title}</h3>
-                <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                  {description}
-                </p>
-              </article>
-            ))}
-          </div>
+      <section className="site-container section-space" aria-labelledby="collections-heading">
+        <div className="section-heading">
+          <div><div className="eyebrow">EXPLORE THE STUDIO</div><h2 id="collections-heading">چه چیزی اینجا پیدا می‌کنی؟</h2></div>
+          <p>چهار فضای مستقل، با یک زبان بصری مشترک و آماده پذیرش اَسِت‌های سفارشی.</p>
+        </div>
+        <div className="collection-grid">
+          {collectionLinks.map(({ id, icon: Icon }) => {
+            const group = collections[id];
+            return (
+              <Link href={"/" + id} className="collection-tile glass-panel" key={id}>
+                <div className="tile-top"><span>{group.index} / STUDIO</span><ArrowUpLeft size={20} /></div>
+                <span className="tile-icon"><Icon size={29} strokeWidth={1.6} /></span>
+                <div className="tile-bottom"><span className="english-label">{group.english}</span><h3>{group.title}</h3><p>{group.short}</p></div>
+              </Link>
+            );
+          })}
         </div>
       </section>
 
-      <footer className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-8 text-sm text-muted-foreground sm:px-8 lg:px-10">
-        <p>Professional Web Toolkit · starter-web</p>
-        <p>Next.js + TypeScript + Tailwind</p>
-      </footer>
+      <section className="site-container section-space" aria-labelledby="preview-heading">
+        <div className="section-heading">
+          <div><div className="eyebrow">LAYOUT PREVIEW / ASSET RESERVATIONS</div><h2 id="preview-heading">ساختاری برای ایده‌های آینده</h2></div>
+          <p>کارت‌های زیر نمونه ساختاری‌اند و به‌عنوان پژوهش یا دستاورد واقعی معرفی نمی‌شوند.</p>
+        </div>
+        <div className="portfolio-grid">
+          {[entries[0], entries[2], entries[4]].map((item) => <PortfolioCard item={item} key={item.slug} />)}
+        </div>
+      </section>
+
+      <section className="site-container" aria-labelledby="about-preview-heading">
+        <div className="feature-banner glass-panel">
+          <div className="feature-text">
+            <div className="eyebrow">BEHIND THE WORK</div>
+            <h2 id="about-preview-heading">پشت هر پروژه، یک مسیر یادگیری وجود دارد.</h2>
+            <p>اینجا قرار است روایت علمی یک دانشجوی دندان‌پزشکی شکل بگیرد. معرفی، سوابق و راه‌های ارتباطی پس از تکمیل اطلاعات شخصی منتشر می‌شوند.</p>
+            <Link href="/about" className="button-primary">درباره این فضا <ChevronLeft size={18} /></Link>
+          </div>
+          <AssetFrame asset="portrait" className="feature-portrait" />
+        </div>
+      </section>
     </main>
   );
 }
