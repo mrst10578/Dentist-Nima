@@ -48,3 +48,29 @@ No auth, CMS, upload service, database or cloud object storage has been added in
 2. Research/project cover set.
 3. Presentation/gallery cover set.
 4. Owner-provided portrait and optional ambient supporting assets.
+
+
+## Three.js sculpture integration (Phase 2)
+The hero slot is no longer waiting for a flat image on compatible browsers. A locally
+generated Three.js molar sculpture now renders with four stylized cusps, three roots,
+pale porcelain/enamel material, rim lights, translucent highlights and restrained
+orbital particles. **It is an artistic sculpture, not an anatomically validated medical model.**
+Do not use it to teach diagnosis or procedures.
+
+Sources:
+- src/components/three/tooth-geometry.ts: isolated procedural geometry
+- src/components/three/scene.ts: lighting, materials, interaction, animation and resource disposal
+- src/components/three/hero-canvas.tsx: client-only activation, WebGL capability checks and fallback
+
+No licensed anatomical imagery or clinical material is bundled. The previous
+hero-molar.webp manifest key stays available as the static fallback and future
+reviewed poster. When replacing the sculpture with a vetted GLB, preserve the
+same WebGL gate, visibility pause, pixel ratio budget and reduced-motion fallback.
+
+Performance/reliability contract:
+- Load the 3D module only once the hero approaches the viewport.
+- Cap device pixel ratio, pause RAF rendering offscreen and release GPU resources.
+- Don't intercept touch scrolling; mouse drag and mouse parallax are decorative.
+- In reduced-motion, Save-Data, failed WebGL or runtime error, show the existing
+  accessible static placeholder instead of a blank frame.
+- Keep the rest of the content HTML/CSS, not 3D.

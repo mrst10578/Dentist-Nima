@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 
 import { AssetFrame } from "@/components/asset-frame";
+import { HeroCanvas } from "@/components/three/hero-canvas";
 import { PortfolioCard } from "@/components/portfolio-card";
 import { collections, entries } from "@/lib/portfolio";
 
@@ -55,13 +56,13 @@ export default function Home() {
         <div className="hero-display">
           <div className="hero-display-frame glass-panel">
             <div className="display-topline"><span>VISUAL LAB / OBJECT 001</span><span className="crosshair">+</span></div>
-            <AssetFrame asset="hero-molar" className="hero-asset" priority />
+            <HeroCanvas />
             <div className="display-caption">
-              <div><span className="display-kicker">COMING ASSET</span><strong>Dental structure study</strong></div>
+              <div><span className="display-kicker">THREE.JS / BIOGLASS</span><strong>Interactive dental sculpture</strong></div>
               <span className="display-number">01</span>
             </div>
           </div>
-          <div className="floating-chip glass-panel"><Layers3 size={18} /><span>Asset-first<br /><b>DESIGN SYSTEM</b></span></div>
+          <div className="floating-chip glass-panel"><Layers3 size={18} /><span>Asset-first<br /><b>3D EXPERIENCE</b></span></div>
         </div>
       </section>
 
