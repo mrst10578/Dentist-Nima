@@ -15,6 +15,6 @@ test("BioGlass home navigation and asset placeholders", async ({ page }) => {
 test("mobile navigation reveals site sections", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
-  await page.getByRole("button", { name: "باز کردن فهرست" }).click();
+  await page.locator(".mobile-nav summary").click();
   await expect(page.getByRole("navigation", { name: "ناوبری موبایل" }).getByRole("link", { name: "ارائه‌ها" })).toBeVisible();
 });
