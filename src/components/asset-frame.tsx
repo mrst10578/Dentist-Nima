@@ -1,9 +1,19 @@
-
 import Image from "next/image";
-import { ImagePlus, Orbit } from "lucide-react";
-
 import { activeAssets, assetCatalog, type AssetKey } from "@/lib/portfolio";
 import { cn } from "@/lib/utils";
+
+const editions: Record<AssetKey, { group: string; edition: string }> = {
+  "hero-molar": { group: "DENTAL SCIENCE", edition: "FIG / 001" },
+  "research-enamel": { group: "RESEARCH", edition: "STUDY / 001" },
+  "research-microscopy": { group: "RESEARCH", edition: "STUDY / 002" },
+  "project-anatomy": { group: "PROJECTS", edition: "PROJECT / 001" },
+  "project-biomaterial": { group: "PROJECTS", edition: "PROJECT / 002" },
+  "presentation-pulp": { group: "PRESENTATIONS", edition: "TALK / 001" },
+  "presentation-crown": { group: "PRESENTATIONS", edition: "TALK / 002" },
+  "gallery-laboratory": { group: "ARCHIVE", edition: "PLATE / 001" },
+  "gallery-model": { group: "ARCHIVE", edition: "PLATE / 002" },
+  "portrait": { group: "PROFILE", edition: "PERSONAL / 001" },
+};
 
 export function AssetFrame({
   asset,
@@ -16,14 +26,13 @@ export function AssetFrame({
 }) {
   const info = assetCatalog[asset];
   const src = activeAssets[asset];
-
+  const edition = editions[asset];
   return (
-    <div
-      className={cn("asset-frame", className)}
+    <div className={cn("asset-frame", className)}
       style={{ aspectRatio: info.ratio }}
       data-asset={asset}
-      aria-label={src ? info.label : "جایگاه رزروشده برای " + info.label}
       role="img"
+      aria-label={src ? info.label : "جایگاه آماده‌سازی برای " + info.label}
     >
       {src ? (
         <Image
@@ -35,17 +44,21 @@ export function AssetFrame({
           className="asset-image"
         />
       ) : (
-        <div className="asset-placeholder" aria-hidden="true">
-          <div className="asset-grid" />
-          <div className="asset-aura" />
-          <div className="asset-ring asset-ring-one" />
-          <div className="asset-ring asset-ring-two" />
-          <div className="asset-orb"><Orbit size={44} strokeWidth={0.8} /></div>
-          <span className="asset-target">BG / {asset.toUpperCase()}</span>
-          <span className="asset-bottom">
-            <ImagePlus size={14} />
-            اَسِت اختصاصی در مرحله بعد
-          </span>
+        <div className="asset-placeholder editorial-asset-cover" aria-hidden="true">
+          <div className="editorial-asset-upper" dir="ltr">
+            <span>BIOGLASS / DOCUMENTS</span>
+            <span>{edition.edition}</span>
+          </div>
+          <div className="editorial-asset-emblem">
+            <span className="editorial-asset-axis" />
+            <span className="editorial-asset-arc one" />
+            <span className="editorial-asset-arc two" />
+            <span className="editorial-asset-arc three" />
+          </div>
+          <div className="editorial-asset-bottom" dir="ltr">
+            <span>{edition.group}</span>
+            <span>CONTENT PENDING</span>
+          </div>
         </div>
       )}
     </div>
