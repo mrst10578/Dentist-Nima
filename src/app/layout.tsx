@@ -6,6 +6,7 @@ import { Footer, Header } from "@/components/site-chrome";
 import { siteConfig } from "@/lib/site";
 
 import "./globals.css";
+import "./editorial.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
