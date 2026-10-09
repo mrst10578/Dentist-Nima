@@ -1,117 +1,109 @@
-
 import Link from "next/link";
-import {
-  ArrowLeft,
-  ArrowUpLeft,
-  BookOpenText,
-  ChevronLeft,
-  FlaskConical,
-  Layers3,
-  Microscope,
-  Presentation,
-  Sparkles,
-} from "lucide-react";
-
-import { AssetFrame } from "@/components/asset-frame";
+import { ArrowUpLeft, ArrowLeft } from "lucide-react";
 import { HeroCanvas } from "@/components/three/hero-canvas";
 import { PortfolioCard } from "@/components/portfolio-card";
 import { collections, entries } from "@/lib/portfolio";
 
-const collectionLinks = [
-  { id: "research", icon: BookOpenText },
-  { id: "projects", icon: FlaskConical },
-  { id: "presentations", icon: Presentation },
-  { id: "gallery", icon: Microscope },
+const directory = [
+  { id: "research", title: "پژوهش‌ها", english: "Research & publications", index: "01", copy: "مقاله‌ها، مرور منابع و مسیر شکل‌گیری پرسش‌های علمی." },
+  { id: "presentations", title: "ارائه‌های علمی", english: "Talks & presentations", index: "02", copy: "اسلایدها، پوسترها و سخنرانی‌های دانشگاهی." },
+  { id: "projects", title: "پروژه‌ها", english: "Academic projects", index: "03", copy: "پروژه‌های درسی، فعالیت‌های پژوهشی و مستندات آن‌ها." },
+  { id: "gallery", title: "گالری مستندات", english: "Scientific imagery", index: "04", copy: "تصاویر مرتبط با کارهای علمی، با توضیح و ذکر منبع." },
 ] as const;
 
 export default function Home() {
   return (
-    <main id="main-content">
-      <section className="hero site-container" aria-labelledby="hero-heading">
-        <div className="hero-copy">
-          <div className="eyebrow"><span className="pulse-dot" /> DIGITAL DENTAL PORTFOLIO <Sparkles size={14} /></div>
-          <p className="hero-pretitle">علم. کنجکاوی. ساختن.</p>
-          <h1 id="hero-heading">
-            جایی برای ثبت
-            <br />
-            <span>مسیر کشف و پژوهش.</span>
-          </h1>
-          <p className="hero-description">
-            یک فضای شخصی برای گردآوری تحقیقات، پروژه‌های دانشگاهی،
-            ارائه‌ها و تجربه‌های علمی در دنیای دندان‌پزشکی.
+    <main id="main-content" className="editorial-home">
+      <section className="editorial-hero site-container" aria-labelledby="hero-heading">
+        <div className="editorial-lead">
+          <div className="editorial-overline">
+            <span className="editorial-mark" aria-hidden="true" />
+            <span dir="ltr">INDEPENDENT ACADEMIC PORTFOLIO</span>
+          </div>
+          <p className="editorial-sector">DENTAL SCIENCES <span aria-hidden="true">/</span> 2026</p>
+          <h1 id="hero-heading">مسیرِ علمی،<br /><span>به روایت پژوهش.</span></h1>
+          <p className="editorial-summary">
+            آرشیوی شخصی برای گردآوری پژوهش‌ها، ارائه‌های دانشگاهی و
+            پروژه‌های علمی در مسیر تحصیل دندان‌پزشکی.
           </p>
-          <div className="hero-actions">
-            <Link href="/research" className="button-primary">
-              کشف آرشیو علمی <ArrowUpLeft size={19} aria-hidden="true" />
+          <div className="editorial-actions">
+            <Link href="/research" className="editorial-main-action">
+              مرور پژوهش‌ها <ArrowUpLeft size={20} aria-hidden="true" />
             </Link>
-            <Link href="/about" className="button-quiet">
-              آشنایی بیشتر <ArrowLeft size={18} aria-hidden="true" />
+            <Link href="/about" className="editorial-secondary-action">
+              درباره صاحب پورتفولیو <ArrowLeft size={17} aria-hidden="true" />
             </Link>
           </div>
-          <div className="hero-footnote">
-            <span className="index-marker">01 / 04</span>
-            <span>پژوهش • پروژه • ارائه • گالری</span>
+          <div className="editorial-hero-bottom" dir="ltr">
+            <span>AN ONGOING BODY OF WORK</span>
+            <span>01 / RESEARCH JOURNAL</span>
           </div>
         </div>
-        <div className="hero-display">
-          <div className="hero-display-frame glass-panel">
-            <div className="display-topline"><span>VISUAL LAB / OBJECT 001</span><span className="crosshair">+</span></div>
-            <HeroCanvas />
-            <div className="display-caption">
-              <div><span className="display-kicker">THREE.JS / BIOGLASS</span><strong>Interactive dental sculpture</strong></div>
-              <span className="display-number">01</span>
-            </div>
+        <div className="editorial-cover" aria-label="تصویر مفهومی پژوهش‌های دندان‌پزشکی">
+          <div className="editorial-cover-top" dir="ltr"><span>BG / STUDIO</span><span>FIG. 001</span></div>
+          <HeroCanvas />
+          <div className="editorial-cover-caption">
+            <div><span dir="ltr">VISUAL STUDY</span><strong>زیبایی در جزئیات علم</strong></div>
+            <span dir="ltr">DENTISTRY / 01</span>
           </div>
-          <div className="floating-chip glass-panel"><Layers3 size={18} /><span>Asset-first<br /><b>3D EXPERIENCE</b></span></div>
         </div>
       </section>
 
-      <section className="intro-strip site-container" aria-label="معرفی سایت">
-        <div className="section-index">THE IDEA <span> / 001</span></div>
-        <p>یک ویترین علمی مستقل؛ <strong>هر فایل، تصویر و ایده در جای درست خودش.</strong></p>
-        <div className="tiny-orbit" aria-hidden="true">✳</div>
-      </section>
+      <div className="editorial-ticker" aria-label="موضوعات پورتفولیو">
+        <div className="site-container" dir="ltr">
+          <span>RESEARCH</span><span className="editorial-ticker-star" aria-hidden="true">✦</span>
+          <span>ACADEMIC PROJECTS</span><span className="editorial-ticker-star" aria-hidden="true">✦</span>
+          <span>PRESENTATIONS</span><span className="editorial-ticker-star" aria-hidden="true">✦</span>
+          <span>SCIENTIFIC NOTES</span>
+        </div>
+      </div>
 
-      <section className="site-container section-space" aria-labelledby="collections-heading">
-        <div className="section-heading">
-          <div><div className="eyebrow">EXPLORE THE STUDIO</div><h2 id="collections-heading">چه چیزی اینجا پیدا می‌کنی؟</h2></div>
-          <p>چهار فضای مستقل، با یک زبان بصری مشترک و آماده پذیرش اَسِت‌های سفارشی.</p>
-        </div>
-        <div className="collection-grid">
-          {collectionLinks.map(({ id, icon: Icon }) => {
-            const group = collections[id];
-            return (
-              <Link href={"/" + id} className="collection-tile glass-panel" key={id}>
-                <div className="tile-top"><span>{group.index} / STUDIO</span><ArrowUpLeft size={20} /></div>
-                <span className="tile-icon"><Icon size={29} strokeWidth={1.6} /></span>
-                <div className="tile-bottom"><span className="english-label">{group.english}</span><h3>{group.title}</h3><p>{group.short}</p></div>
-              </Link>
-            );
-          })}
-        </div>
-      </section>
-
-      <section className="site-container section-space" aria-labelledby="preview-heading">
-        <div className="section-heading">
-          <div><div className="eyebrow">LAYOUT PREVIEW / ASSET RESERVATIONS</div><h2 id="preview-heading">ساختاری برای ایده‌های آینده</h2></div>
-          <p>کارت‌های زیر نمونه ساختاری‌اند و به‌عنوان پژوهش یا دستاورد واقعی معرفی نمی‌شوند.</p>
-        </div>
-        <div className="portfolio-grid">
-          {[entries[0], entries[2], entries[4]].map((item) => <PortfolioCard item={item} key={item.slug} />)}
-        </div>
-      </section>
-
-      <section className="site-container" aria-labelledby="about-preview-heading">
-        <div className="feature-banner glass-panel">
-          <div className="feature-text">
-            <div className="eyebrow">BEHIND THE WORK</div>
-            <h2 id="about-preview-heading">پشت هر پروژه، یک مسیر یادگیری وجود دارد.</h2>
-            <p>اینجا قرار است روایت علمی یک دانشجوی دندان‌پزشکی شکل بگیرد. معرفی، سوابق و راه‌های ارتباطی پس از تکمیل اطلاعات شخصی منتشر می‌شوند.</p>
-            <Link href="/about" className="button-primary">درباره این فضا <ChevronLeft size={18} /></Link>
+      <section className="site-container editorial-directory" aria-labelledby="directory-heading">
+        <header className="editorial-section-head">
+          <div>
+            <div className="editorial-overline"><span className="editorial-mark" aria-hidden="true" /><span dir="ltr">THE ARCHIVE / INDEX</span></div>
+            <h2 id="directory-heading">مجموعه آثار</h2>
           </div>
-          <AssetFrame asset="portrait" className="feature-portrait" />
+          <p>هر بخش برای معرفی و مستندسازی روشنِ یک دسته از فعالیت‌های علمی طراحی شده است.</p>
+        </header>
+        <div className="editorial-index">
+          {directory.map((item) => (
+            <Link href={"/" + item.id} key={item.id} className="editorial-index-row">
+              <span className="editorial-index-count" dir="ltr">{item.index}</span>
+              <span className="editorial-index-body"><strong>{item.title}</strong><small dir="ltr">{item.english}</small></span>
+              <span className="editorial-index-copy">{item.copy}</span>
+              <span className="editorial-index-arrow" aria-hidden="true"><ArrowUpLeft size={24}/></span>
+            </Link>
+          ))}
         </div>
       </section>
+
+      <section className="site-container editorial-work-section" aria-labelledby="preview-heading">
+        <header className="editorial-section-head">
+          <div>
+            <div className="editorial-overline"><span className="editorial-mark" aria-hidden="true" /><span dir="ltr">SELECTED LAYOUT STUDIES</span></div>
+            <h2 id="preview-heading">نمونه ساختار آثار</h2>
+          </div>
+          <p>نمونه‌های زیر صرفاً قالب صفحه‌اند؛ هنوز مقاله یا ارائه واقعی به آن‌ها نسبت داده نشده است.</p>
+        </header>
+        <div className="portfolio-grid editorial-portfolio-grid">
+          {[entries[0], entries[2], entries[4]].map((item)=><PortfolioCard key={item.slug} item={item}/>)}
+        </div>
+      </section>
+
+      <section className="site-container editorial-personal-section" aria-labelledby="personal-heading">
+        <div className="editorial-personal-copy">
+          <span dir="ltr">A PERSONAL ACADEMIC ARCHIVE / 2026</span>
+          <h2 id="personal-heading">هر پژوهش، بخشی از<br/><em>مسیر یادگیری.</em></h2>
+          <p>این فضا به مرور با پژوهش‌ها، پروژه‌ها و ارائه‌های واقعی تکمیل می‌شود.
+            هر اثر با اطلاعات علمی و فایل‌های مرتبط خود ارائه خواهد شد.</p>
+          <Link href="/about">بیشتر درباره این مسیر <ArrowUpLeft size={19} aria-hidden="true"/></Link>
+        </div>
+        <div className="editorial-personal-aside" aria-hidden="true">
+          <span>BG.</span><small dir="ltr">A DOCUMENTED JOURNEY<br/>IN DENTAL SCIENCE</small>
+        </div>
+      </section>
+      <div className="editorial-collection-note site-container" dir="ltr"><span>© BIOGLASS STUDIO</span><span>{Object.keys(collections).length} ARCHIVE CATEGORIES</span></div>
     </main>
   );
 }
