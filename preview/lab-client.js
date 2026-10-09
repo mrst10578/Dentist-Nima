@@ -72,7 +72,7 @@
  setFocus(selected);
  host.appendChild(renderer.domElement);
  host.dataset.render="ready";
- const fallback=document.getElementById("lab-static");if(fallback)fallback.hidden=true;
+ const fallback=document.getElementById("lab-static");if(fallback){fallback.hidden=true;fallback.style.display="none";}
  document.getElementById("lab-led").textContent="WEBGL ACTIVE";
  let yaw=-.37,drag=false,lastX=0,visible=true,raf=0,dead=false,lastTime=0;
  resetCamera=()=>{yaw=-.37;};
