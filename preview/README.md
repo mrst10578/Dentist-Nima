@@ -21,9 +21,3 @@ or the CDN is inaccessible, the CSS static visual remains.
 
 For production, compile the original Next.js app using a supported Cloudflare
 Workers adapter or static export and upload its full static assets.
-
-## Phase 3 visualizations
-- /lab is a stand-alone WebGL educational model with keyboard-accessible enamel, dentin, pulp and root selection. Model is intentionally schematic and not clinically verified.
-- /insights offers SVG/HTML comparisons, year/topic/metric filters and CSV export. Every value is synthetic and prominently labeled.
-- Both browser scripts are separately versioned at preview/lab-client.js and preview/insights-client.js and embedded into preview/worker.mjs for deployment.
-- Verified ZH3 browser rendering returned 200 for both pages, a live lab WebGL canvas and populated SVG research trends.
