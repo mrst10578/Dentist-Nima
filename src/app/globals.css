@@ -420,3 +420,85 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--ring); outline
 @media (prefers-reduced-motion: reduce) {
   .hero-three-mount { cursor: auto; }
 }
+
+
+/* SCIENTIFIC VISUALIZATIONS: actual controls remain in HTML; WebGL only owns model */
+.viz-page{padding-top:70px;padding-bottom:105px}
+.viz-page>h1{font-size:clamp(32px,4.7vw,58px);line-height:1.5;color:#173c52;margin:20px 0 10px}
+.viz-page>h1 span{color:#168ca6}
+.viz-intro{max-width:760px;font-size:15px;color:#597d8f;line-height:2.1;margin-bottom:32px}
+.viz-feature{align-items:center}
+.viz-promo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.viz-promo{border-radius:26px;min-height:214px;padding:29px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;color:#1e526a}
+.viz-promo::after{content:"";position:absolute;left:-30px;top:-55px;width:210px;height:210px;border:1px solid rgba(66,175,194,.29);border-radius:50%;box-shadow:0 0 0 31px rgba(150,226,236,.09),0 0 0 62px rgba(150,226,236,.06);pointer-events:none}
+.viz-promo p{max-width:350px;font-size:13px;color:#64899b;line-height:2;margin:9px 0 0}
+.viz-promo h3{font-size:23px;margin:0}
+.viz-promo a{color:#117b94;font-weight:800;font-size:13px;align-self:flex-start;z-index:1}
+.viz-eyebrow{font:800 10px "Segoe UI",sans-serif;letter-spacing:.16em;color:#3e9db1}
+.lab-layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(340px,.8fr);gap:24px;align-items:stretch}
+.lab-stage,.lab-info,.research-filter,.research-insight,.research-chart,.research-table{border-radius:28px}
+.lab-stage{min-height:650px;padding:20px;display:flex;flex-direction:column;background:linear-gradient(145deg,#e7f8fd,#c9edf6)}
+.lab-stage-top{display:flex;justify-content:space-between;align-items:center;gap:10px;color:#5a93a8;letter-spacing:.11em;font:700 10px "Segoe UI",sans-serif}
+.lab-led{color:#168da4;font-weight:800}
+.lab-viewport{position:relative;flex:1;min-height:430px;overflow:hidden;border-radius:20px;background:radial-gradient(ellipse at 50% 42%,#fff,rgba(237,251,255,.9) 38%,#caeaf1 91%)}
+.lab-viewport:before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(67,157,181,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(67,157,181,.09) 1px,transparent 1px);background-size:34px 34px;mask-image:radial-gradient(ellipse,transparent 15%,black 88%)}
+.lab-canvas{position:absolute;inset:0;touch-action:pan-y;cursor:grab}
+.lab-canvas:active{cursor:grabbing}
+.lab-canvas canvas{width:100%;height:100%;display:block}
+.lab-static{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;pointer-events:none;color:#276d83;gap:3px}
+.lab-static-crown{font-size:132px;line-height:1;color:#b8e5ee;text-shadow:0 18px 34px rgba(39,126,152,.3)}
+.lab-static-roots{font-size:70px;color:#5eb1c4;line-height:1;transform:rotate(180deg)}
+.lab-static strong{font-size:12px;font-weight:500;color:#578495;margin-top:20px}
+.lab-legend{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;padding-top:18px;color:#3d7186;font-size:12px}
+.lab-legend>span{display:flex;gap:8px;align-items:center}
+.lab-legend i,.layer-choice-color{width:13px;height:13px;display:inline-block;border:1px solid rgba(23,118,144,.25);border-radius:50%}
+.lab-view-caption{font-size:11px;color:#5f8294;text-align:center;margin:12px 0 0}
+.lab-info{padding:30px 26px;display:flex;flex-direction:column}
+.lab-info h2{font-size:clamp(23px,3vw,33px);color:#204c65;line-height:1.5;margin:18px 0 5px}
+.lab-lead{font-size:13px;color:#64818d;line-height:2;margin:0 0 22px}
+.layer-selector{display:grid;gap:9px}
+.layer-choice{appearance:none;width:100%;border:1px solid #d0e8ee;background:rgba(255,255,255,.68);border-radius:15px;padding:13px 15px;display:flex;gap:12px;align-items:center;text-align:right;cursor:pointer;color:#2c6077;min-height:65px;font-family:inherit}
+.layer-choice.is-active{border-color:#24b0c8;background:#e4faff;box-shadow:inset 3px 0 0 #29afc3}
+.layer-choice:focus-visible,.lab-reset:focus-visible,.research-export:focus-visible,.research-filter select:focus-visible{outline:3px solid #178ba6;outline-offset:3px}
+.layer-choice-count{font:700 11px "Segoe UI",sans-serif;color:#7cabb8}
+.layer-choice-label{flex:1;font-weight:800;font-size:14px;display:flex;align-items:flex-start;flex-direction:column;gap:1px}
+.layer-choice-label small{font:700 9px "Segoe UI",sans-serif;color:#729cac;letter-spacing:.12em}
+.lab-detail{margin-top:22px;border-radius:18px;border:1px solid #d3e9ef;background:rgba(225,249,254,.55);padding:18px}
+.lab-detail-overline{font:700 10px "Segoe UI",sans-serif;letter-spacing:.11em;color:#389ab3}
+.lab-detail h3{font-size:20px;margin:7px 0 4px;color:#1c6079}
+.lab-detail p{font-size:13px;line-height:2;color:#3f6375;margin:0}
+.lab-detail small{display:block;margin-top:10px;color:#5e8596;line-height:1.85}
+.lab-reset{align-self:stretch;margin-top:14px;border:1px solid #c5e7ed;background:#fff;padding:12px;border-radius:13px;color:#237c91;font-family:inherit;font-size:12px;font-weight:800;cursor:pointer;min-height:44px}
+.research-warning{border:1px solid #eccfaa;background:#fff8ed;color:#7b5a31;border-radius:17px;padding:16px 19px;font-size:13px;line-height:1.9;margin-bottom:19px}
+.research-warning strong{color:#915d1e;margin-inline-end:8px}
+.research-filter{display:flex;gap:15px;flex-wrap:wrap;align-items:flex-end;padding:21px;margin-bottom:23px}
+.research-filter label{display:grid;gap:6px;flex:1 1 145px;color:#436b80;font-size:12px;font-weight:800}
+.research-filter select{font-family:inherit;min-height:45px;max-width:100%;padding:8px 12px;border-radius:12px;border:1px solid #cce1e9;background:white;color:#21536a}
+.research-export{min-height:45px;border:1px solid #9dd5df;background:#e6faff;border-radius:12px;padding:7px 15px;cursor:pointer;color:#197790;font-family:inherit;font-size:12px;font-weight:800}
+.research-insight{padding:20px 24px;margin-bottom:23px;display:grid;gap:4px}
+.research-insight>span{color:#4c9cad;letter-spacing:.11em;font:800 11px "Segoe UI",sans-serif}
+.research-insight>strong{font-size:50px;color:#127f98;line-height:1.35}
+.research-insight>div{font-weight:800;color:#355f74;font-size:15px}
+.research-insight>small{color:#6a93a4;font-size:11px}
+.research-charts{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:23px}
+.research-chart{padding:23px;min-width:0;min-height:400px}
+.chart-head>span{font:700 10px "Segoe UI",sans-serif;letter-spacing:.14em;color:#4e9fb2}
+.chart-head h2{font-size:21px;color:#244e66;margin:8px 0 5px}
+.chart-head p{font-size:12px;color:#698896;margin:0;line-height:1.9}
+.bar-lines{display:grid;gap:24px;margin-top:37px}
+.bar-line{transition:opacity .2s}
+.bar-line.is-muted{opacity:.3}
+.bar-line-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;font-size:13px;color:#31596e}
+.bar-line-head strong{font:800 17px "Segoe UI",sans-serif}
+.bar-track{height:15px;border-radius:99px;background:#deecf0;overflow:hidden}
+.bar-fill{height:100%;border-radius:99px;min-width:4px}
+.trend-plot{width:100%;height:auto;max-height:280px;margin-top:14px;overflow:visible}
+.research-table{padding:23px}
+.table-scroll{overflow:auto;max-width:100%;margin-top:18px}
+.research-table table{border-collapse:collapse;width:100%;min-width:500px;text-align:right;font-size:13px;color:#416b81}
+.research-table th,.research-table td{padding:11px 14px;border-bottom:1px solid #e0edf1}
+.research-table thead{background:#eaf7fa}
+.research-table tbody tr:nth-child(even){background:rgba(235,249,252,.3)}
+@media(max-width:950px){.lab-layout{grid-template-columns:1fr}.lab-stage{min-height:540px}.lab-viewport{min-height:395px}}
+@media(max-width:720px){.research-charts,.viz-promo-grid{grid-template-columns:1fr}.viz-feature{align-items:start;flex-direction:column}.viz-page{padding-top:42px;padding-bottom:60px}.research-chart{min-height:330px}.lab-stage{padding:13px;min-height:480px}.lab-viewport{min-height:330px}.lab-info{padding:22px}.lab-legend{gap:12px}.research-filter{padding:17px}.research-insight>strong{font-size:43px}}
+@media(prefers-reduced-motion:reduce){.layer-choice,.bar-line{transition:none}}
