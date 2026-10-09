@@ -3,10 +3,10 @@ import { expect, test } from "@playwright/test";
 
 test("BioGlass home navigation and asset placeholders", async ({ page }) => {
   await page.goto("/");
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("مسیر کشف و پژوهش");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("به روایت پژوهش");
   await expect(page.locator('[data-hero-visual]')).toBeVisible();
-  await expect(page.getByText("THREE.JS / BIOGLASS")).toBeVisible();
-  await page.getByRole("link", { name: "کشف آرشیو علمی" }).click();
+  await expect(page.getByText("VISUAL STUDY")).toBeVisible();
+  await page.getByRole("link", { name: "مرور پژوهش‌ها" }).click();
   await expect(page).toHaveURL(/\/research$/);
   await expect(page.getByRole("heading", { name: "پژوهش‌ها", exact: true })).toBeVisible();
   await page.getByRole("link", { name: "مشاهده قالب مطالعه ساختار مینا" }).click();
