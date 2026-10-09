@@ -8,6 +8,8 @@ const navigation = [
   { label: "پروژه‌ها", href: "/projects" },
   { label: "ارائه‌ها", href: "/presentations" },
   { label: "گالری", href: "/gallery" },
+  { label: "آزمایشگاه ۳D", href: "/lab" },
+  { label: "داشبورد", href: "/insights" },
   { label: "درباره", href: "/about" },
 ];
 

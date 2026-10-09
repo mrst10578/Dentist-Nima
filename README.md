@@ -31,3 +31,9 @@ Do not publish identifying clinical photos, patient records, fabricated achievem
 
 ## Toolkit
 This project originally came from mrst10578/starter-web and retains its verification scripts and lightweight foundation. Optional feature packs should be added only for actual requirements.
+
+
+## Interactive research spaces
+- /lab: dynamically imported Three.js educational schematic, selectable enamel/dentin/pulp/root and static fallback; NOT a clinically valid anatomical model.
+- /insights: accessible SVG charts, year/topic/metric filters, CSV export and table using SYNTHETIC data only.
+- /preview: independent Cloudflare ZH3 Worker demo, not compiled Next.js.

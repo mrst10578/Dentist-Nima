@@ -91,6 +91,24 @@ export default function Home() {
         </div>
       </section>
 
+
+      <section className="site-container section-space" aria-labelledby="viz-heading">
+        <div className="section-heading viz-feature">
+          <div><div className="eyebrow" dir="ltr">INTERACTIVE SCIENCE STUDIO</div><h2 id="viz-heading">علم را لمس کن، داده را بخوان.</h2></div>
+          <p>دو فضای تازه برای کاوش لایه‌های دندان و تمرین خواندن داده‌ها. مقادیر داشبورد ساختگی‌اند.</p>
+        </div>
+        <div className="viz-promo-grid">
+          <article className="viz-promo glass-panel"><span className="viz-eyebrow" dir="ltr">01 / ANATOMY LAB</span>
+            <div><h3>آزمایشگاه تعاملی دندان</h3><p>مینا، عاج، پالپ و ریشه را انتخاب کن و مدل شماتیک سه‌بعدی را بررسی کن.</p></div>
+            <Link href="/lab">ورود به آزمایشگاه ↖</Link>
+          </article>
+          <article className="viz-promo glass-panel"><span className="viz-eyebrow" dir="ltr">02 / RESEARCH INSIGHTS</span>
+            <div><h3>داشبورد داده‌های پژوهشی</h3><p>فیلتر، مقایسه و بررسی روند سالانه با داده‌های شبیه‌سازی‌شده.</p></div>
+            <Link href="/insights">کاوش داشبورد ↖</Link>
+          </article>
+        </div>
+      </section>
+
       <section className="site-container section-space" aria-labelledby="preview-heading">
         <div className="section-heading">
           <div><div className="eyebrow">LAYOUT PREVIEW / ASSET RESERVATIONS</div><h2 id="preview-heading">ساختاری برای ایده‌های آینده</h2></div>
