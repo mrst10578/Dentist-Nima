@@ -5,6 +5,7 @@ on:
       - feature/bioglass-asset-first-skeleton
     paths:
       - ".github/workflows/bioglass-acquire-images.yml"
+      - "assets/bioglass/02_sourced_real/fetch_sources.py"
   workflow_dispatch:
 
 permissions:
@@ -29,3 +30,15 @@ jobs:
             git commit -m "assets: copy licensed scientific source originals with attribution report"
             git push origin HEAD:feature/bioglass-asset-first-skeleton
           fi
+
+      - name: Package sourced image folder for download
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: BioGlass-Licensed-Scientific-Images
+          path: |
+            assets/bioglass/02_sourced_real/originals/
+            assets/bioglass/02_sourced_real/download_report.json
+            assets/bioglass/02_sourced_real/LICENSES_AND_CREDITS.md
+          if-no-files-found: warn
+          retention-days: 30
