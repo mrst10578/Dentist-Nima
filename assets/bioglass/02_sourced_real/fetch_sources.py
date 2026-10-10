@@ -11,6 +11,7 @@ for x in sources:
  escaped=urllib.parse.quote(name,safe="").replace("%5F","_")
  normalized=name.replace(" ","_")
  md5=hashlib.md5(normalized.encode("utf-8")).hexdigest()
+ target=out/x["filename"]
  urls=[
   "https://commons.wikimedia.org/wiki/Special:FilePath/"+escaped,
   "https://upload.wikimedia.org/wikipedia/commons/"+md5[0]+"/"+md5[:2]+"/"+escaped,
