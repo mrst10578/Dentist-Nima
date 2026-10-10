@@ -1,66 +1,31 @@
 [
   {
-    "id": "S01",
-    "state": "copied_original",
-    "path": "originals/enamel-dentin-histology.jpg",
-    "sha256": "353dcd14f04679202fd51dca584aeebf20de9d2ec081722388795ee85bb98bee",
-    "bytes": 143199,
-    "creator": "Dozenist",
-    "license": "CC BY-SA 3.0",
-    "source": "https://commons.wikimedia.org/wiki/File:EnamelLayer04-11-07.jpg"
-  },
-  {
-    "id": "S02",
-    "state": "copied_original",
-    "path": "originals/pulp-histology.png",
-    "sha256": "49a7797be9f4bfe7fd7fd46376153102ac7eaf95fe847b5340f15666ab08a516",
-    "bytes": 2085585,
-    "creator": "Dododopamine; University of Dundee credit",
-    "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Pulp_Histology_.png"
-  },
-  {
     "id": "S03",
-    "state": "download_failed",
-    "errors": [
-      "HTTP Error 429: Too many requests (f061ab2)",
-      "HTTP Error 429: Too many requests (f061ab2)"
-    ]
+    "state": "copied_original",
+    "path": "originals/tooth-histology-nomarski.jpg",
+    "sha256": "57fc86ff2738cceb245ea0dbb061642ea54f42b3f0c066f3bc8148ac6602a6ec",
+    "bytes": 2456292,
+    "creator": "Josef Reischig",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tooth_(248_15)_Histologic_section_of_tooth.jpg"
   },
   {
     "id": "S04",
-    "state": "download_failed",
-    "errors": [
-      "HTTP Error 429: Too many requests (f061ab2)",
-      "HTTP Error 429: Too many requests (f061ab2)"
-    ]
+    "state": "copied_original",
+    "path": "originals/dental-structure-vintage.jpg",
+    "sha256": "cc6fddde3b790da8019701b8c662fba655ebffc67d02dbf9cdabdf22f7131830",
+    "bytes": 1712340,
+    "creator": "Bunker / Turner (1924)",
+    "license": "US public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Diagram_of_tooth_structure.jpg"
   },
   {
     "id": "S05",
     "state": "download_failed",
     "errors": [
-      "HTTP Error 429: Too many requests (f061ab2)",
-      "HTTP Error 429: Too many requests (f061ab2)"
+      "HTTP Error 429: Too Many Requests (015d12c)",
+      "HTTP Error 429: Too Many Requests (015d12c)",
+      "HTTP Error 400: Use thumbnail sizes listed on https://w.wiki/GHai"
     ]
-  },
-  {
-    "id": "S06",
-    "state": "copied_original",
-    "path": "originals/gray-molar-plate.png",
-    "sha256": "977106e40ca38222c84e4823dd958ec524763c1915c39cf361efc6b643d448ef",
-    "bytes": 10612,
-    "creator": "Henry Vandyke Carter",
-    "license": "Public domain",
-    "source": "https://commons.wikimedia.org/wiki/File:Gray1006.png"
-  },
-  {
-    "id": "S07",
-    "state": "copied_original",
-    "path": "originals/tooth-section-numbered.svg",
-    "sha256": "f5e24a39b5b4816bbf999f470168deaf2fa89ef3f540aa6b13587b7e1be3c238",
-    "bytes": 44141,
-    "creator": "Jak, derived from Asbestos",
-    "license": "Public domain (Commons license)",
-    "source": "https://commons.wikimedia.org/wiki/File:Tooth_Section_numbered.svg"
   }
 ]
