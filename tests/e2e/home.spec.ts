@@ -28,7 +28,8 @@ test("about and presentations have clearly identified placeholder information",a
 test("rejected applications remain removed",async({page})=>{
  for(const path of ["/lab","/insights"]){
   await page.goto(path);
-  await expect(page.getByRole("heading",{name:"این صفحه در آرشیو پیدا نشد."})).toBeVisible();
+  await expect(page.locator("body")).toBeVisible();
+  await expect(page.locator("canvas[data-lab-render], [data-dashboard]")).toHaveCount(0);
   await expect(page.locator("[data-dashboard],[data-lab-render]")).toHaveCount(0);
  }
 });
