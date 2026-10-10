@@ -167,8 +167,8 @@ export default {
   if(path==='/scene.js')return staticResponse(THREE_SCENE,'text/javascript; charset=utf-8');
   if(path==='/favicon.svg')return staticResponse('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="18" fill="#d6f8fc"/><path d="M18 10c35 12 35 32 0 44M46 10C11 22 11 42 46 54M24 22h16M20 32h24M24 42h16" stroke="#168da2" stroke-width="4" fill="none" stroke-linecap="round"/></svg>','image/svg+xml');
   if(path==='/robots.txt')return staticResponse('User-agent: *\nDisallow: /\n','text/plain; charset=utf-8');
-  if(path==='/'||path==='/index.html')return staticResponse(layout(homeV6(),'صفحه اصلی'),'text/html; charset=utf-8');
-  if(path==='/about')return staticResponse(layout(aboutV6(),'درباره استودیو'),'text/html; charset=utf-8');
+  if(path==='/'||path==='/index.html')return staticResponse(layout(home(),'صفحه اصلی'),'text/html; charset=utf-8');
+  if(path==='/about')return staticResponse(layout(about(),'درباره استودیو'),'text/html; charset=utf-8');
   const segments=path.split('/').filter(Boolean);
   const c=DATA.collections.find(x=>x.id===segments[0]);
   if(c&&segments.length===1)return staticResponse(layout(listingV6(c),c.title),'text/html; charset=utf-8');
