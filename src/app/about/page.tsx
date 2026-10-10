@@ -1,40 +1,26 @@
-
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpLeft, BookOpen, GraduationCap, HeartHandshake } from "lucide-react";
-
+import { ArrowUpLeft, ArrowRight } from "lucide-react";
 import { AssetFrame } from "@/components/asset-frame";
-
-export const metadata: Metadata = {
-  title: "درباره استودیو",
-  description: "درباره فضای علمی و پورتفولیوی BioGlass Studio",
-};
-
-export default function AboutPage() {
-  return (
-    <main id="main-content" className="site-container about-main">
-      <div className="about-grid">
-        <section className="about-copy glass-panel">
-          <div className="eyebrow">ABOUT THE STUDIO</div>
-          <h1>یک دفتر باز برای <span>مسیر یادگیری.</span></h1>
-          <p>
-            BioGlass Studio برای ثبت و نمایش مسیر علمی یک دانشجوی دندان‌پزشکی طراحی شده است:
-            از ایده‌های اولیه و پروژه‌های کلاسی تا پژوهش‌ها و ارائه‌های دانشگاهی.
-          </p>
-          <div className="about-values">
-            <div><GraduationCap size={24} /><strong>یادگیری پیوسته</strong><span>ثبت پیشرفت و مهارت‌های علمی</span></div>
-            <div><BookOpen size={24} /><strong>مستندسازی دقیق</strong><span>نگهداری فایل‌ها و منابع قابل ارجاع</span></div>
-            <div><HeartHandshake size={24} /><strong>اشتراک مسئولانه</strong><span>رعایت حریم خصوصی و اعتبار محتوا</span></div>
-          </div>
-          <p className="about-pending">نام کامل، بیوگرافی، دانشگاه، رزومه و راه‌های تماس پس از تأیید صاحب پورتفولیو تکمیل می‌شوند.</p>
-          <Link href="/projects" className="button-primary">مشاهده قالب پروژه‌ها <ArrowUpLeft size={18} /></Link>
-        </section>
-        <div className="about-portrait glass-panel">
-          <div className="display-topline"><span>PERSONAL PROFILE</span><span>01 / PENDING</span></div>
-          <AssetFrame asset="portrait" />
-          <p>جایگاه پرتره اختصاصی؛ در مرحله تولید اَسِت تعیین می‌شود.</p>
-        </div>
-      </div>
-    </main>
-  );
+export const metadata:Metadata={title:"درباره این پورتفولیو",description:"معرفی و مسیر علمی صاحب پورتفولیوی BioGlass Studio"};
+export default function AboutPage(){
+ return <main id="main-content" className="v6-subpage v6-about-page">
+  <div className="site-container">
+   <div className="v6-crumb"><Link href="/"><ArrowRight size={17}/> خانه</Link><span dir="ltr">ABOUT / THE PERSON BEHIND THE WORK</span></div>
+   <section className="v6-about-hero" aria-labelledby="about-title">
+    <div className="v6-about-primary"><span className="v6-kicker" dir="ltr">A PERSONAL ACADEMIC NOTEBOOK</span><h1 id="about-title">پشت هر اثر،<br/><em>یک مسیر یادگیری.</em></h1>
+     <p>این فضا برای نمایش و مستندسازی کارهای علمی یک دانشجوی دندان‌پزشکی طراحی شده است: پژوهش‌ها، فعالیت‌های دانشگاهی، پروژه‌ها و ارائه‌ها، در کنار منابع و فایل‌های مرتبط.</p>
+     <div className="v6-about-divider"/>
+     <span className="v6-about-status">اطلاعات فردی، دانشگاه و سوابق تنها پس از تأیید صاحب پورتفولیو منتشر می‌شوند.</span>
+     <Link href="/research">مرور آرشیو پژوهش‌ها <ArrowUpLeft size={18}/></Link>
+    </div>
+    <div className="v6-about-image"><div className="v6-about-image-header" dir="ltr"><span>PERSONAL PORTRAIT</span><span>PLACEHOLDER / 001</span></div><AssetFrame asset="portrait"/><div className="v6-about-image-caption">جایگاه تصویر اختصاصی و تأییدشده صاحب پورتفولیو</div></div>
+   </section>
+   <section className="v6-about-principles" aria-label="اصول این آرشیو">
+    <div><span dir="ltr">01 / DOCUMENT</span><h2>مستندسازی</h2><p>حفظ زمینه، منابع و مراحل هر اثر؛ نه صرفاً نمایش نتیجه نهایی.</p></div>
+    <div><span dir="ltr">02 / LEARN</span><h2>یادگیری</h2><p>ثبت مسیر شکل‌گیری ایده‌ها و پیشرفت علمی در طول تحصیل.</p></div>
+    <div><span dir="ltr">03 / SHARE</span><h2>اشتراک مسئولانه</h2><p>انتشار فقط محتوای علمی تأییدشده، با رعایت منبع و حریم خصوصی.</p></div>
+   </section>
+  </div>
+ </main>;
 }
