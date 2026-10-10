@@ -26,6 +26,9 @@ test("about and presentations have clearly identified placeholder information",a
  await expect(page.getByText(/نمونه|قالب/).first()).toBeVisible();
 });
 test("rejected applications remain removed",async({page})=>{
- expect((await page.goto("/lab"))?.status()).toBe(404);
- expect((await page.goto("/insights"))?.status()).toBe(404);
+ for(const path of ["/lab","/insights"]){
+  await page.goto(path);
+  await expect(page.getByRole("heading",{name:"این صفحه در آرشیو پیدا نشد."})).toBeVisible();
+  await expect(page.locator("[data-dashboard],[data-lab-render]")).toHaveCount(0);
+ }
 });
