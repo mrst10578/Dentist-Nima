@@ -13,7 +13,8 @@ for x in sources:
  md5=hashlib.md5(normalized.encode("utf-8")).hexdigest()
  urls=[
   "https://commons.wikimedia.org/wiki/Special:FilePath/"+escaped,
-  "https://upload.wikimedia.org/wikipedia/commons/"+md5[0]+"/"+md5[:2]+"/"+escaped
+  "https://upload.wikimedia.org/wikipedia/commons/"+md5[0]+"/"+md5[:2]+"/"+escaped,
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/"+md5[0]+"/"+md5[:2]+"/"+escaped+"/1024px-"+escaped if target.suffix.lower() in (".jpg",".png") else "https://commons.wikimedia.org/wiki/Special:FilePath/"+escaped
  ]
  target=out/x["filename"]
  if target.is_file() and target.stat().st_size>300:
@@ -21,6 +22,7 @@ for x in sources:
  errors=[];done=False
  for u in urls:
   try:
+   time.sleep(5 if errors else 1)
    req=urllib.request.Request(u,headers={"User-Agent":"BioGlassStudentResearchPortfolio/1.0 (educational collection; contact via GitHub repository issues)","Accept":"image/*"})
    with urllib.request.urlopen(req,timeout=36) as response:blob=response.read(12*1024*1024+1)
    ext=target.suffix.lower();check=blob.lstrip()[:50] if ext==".svg" else blob[:10]
@@ -29,7 +31,7 @@ for x in sources:
    if ext==".png" and not check.startswith(b"\x89PNG\r\n\x1a\n"):raise ValueError("invalid png")
    if ext==".svg" and not (check.startswith(b"<?xml") or check.startswith(b"<svg")):raise ValueError("invalid svg")
    target.write_bytes(blob)
-   report.append({"id":x["id"],"state":"copied_original","path":str(target.relative_to(p)),"sha256":hashlib.sha256(blob).hexdigest(),"bytes":len(blob),"creator":x["creator"],"license":x["license"],"source":x["source_url"]})
+   report.append({"id":x["id"],"state":"copied_original" if "/thumb/" not in u else "wikimedia_resized_copy","path":str(target.relative_to(p)),"sha256":hashlib.sha256(blob).hexdigest(),"bytes":len(blob),"creator":x["creator"],"license":x["license"],"source":x["source_url"]})
    print("OK",x["id"],len(blob));done=True;break
   except Exception as e:
    errors.append(str(e)[:200])
