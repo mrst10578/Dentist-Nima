@@ -1,0 +1,58 @@
+[
+  {
+    "id": "S01",
+    "filename": "enamel-dentin-histology.jpg",
+    "original_name": "EnamelLayer04-11-07.jpg",
+    "creator": "Dozenist",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:EnamelLayer04-11-07.jpg"
+  },
+  {
+    "id": "S02",
+    "filename": "pulp-histology.png",
+    "original_name": "Pulp_Histology_.png",
+    "creator": "Dododopamine; University of Dundee credit",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pulp_Histology_.png"
+  },
+  {
+    "id": "S03",
+    "filename": "tooth-histology-nomarski.jpg",
+    "original_name": "Tooth_(248_15)_Histologic_section_of_tooth.jpg",
+    "creator": "Josef Reischig",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Tooth_(248_15)_Histologic_section_of_tooth.jpg"
+  },
+  {
+    "id": "S04",
+    "filename": "dental-structure-vintage.jpg",
+    "original_name": "Diagram_of_tooth_structure.jpg",
+    "creator": "Bunker / Turner (1924)",
+    "license": "US public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Diagram_of_tooth_structure.jpg"
+  },
+  {
+    "id": "S05",
+    "filename": "stained-decalcified-tooth.png",
+    "original_name": "Dental_Pulp_of_a_stained_and_decalcified_tooth.png",
+    "creator": "Natdental",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Dental_Pulp_of_a_stained_and_decalcified_tooth.png"
+  },
+  {
+    "id": "S06",
+    "filename": "gray-molar-plate.png",
+    "original_name": "Gray1006.png",
+    "creator": "Henry Vandyke Carter",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Gray1006.png"
+  },
+  {
+    "id": "S07",
+    "filename": "tooth-section-numbered.svg",
+    "original_name": "Tooth_Section_numbered.svg",
+    "creator": "Jak, derived from Asbestos",
+    "license": "Public domain (Commons license)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Tooth_Section_numbered.svg"
+  }
+]

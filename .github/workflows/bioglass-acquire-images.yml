@@ -1,0 +1,31 @@
+name: Acquire BioGlass Science Images
+on:
+  push:
+    branches:
+      - feature/bioglass-asset-first-skeleton
+    paths:
+      - ".github/workflows/bioglass-acquire-images.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Download open-license original scientific images
+        run: python3 assets/bioglass/02_sourced_real/fetch_sources.py
+      - name: Commit originals and provenance report to draft branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/bioglass/02_sourced_real/originals/ assets/bioglass/02_sourced_real/download_report.json
+          if ! git diff --cached --quiet; then
+            git commit -m "assets: copy licensed scientific source originals with attribution report"
+            git push origin HEAD:feature/bioglass-asset-first-skeleton
+          fi
