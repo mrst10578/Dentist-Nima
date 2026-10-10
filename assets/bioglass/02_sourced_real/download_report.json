@@ -1,5 +1,25 @@
 [
   {
+    "id": "S01",
+    "state": "copied_original",
+    "path": "originals/enamel-dentin-histology.jpg",
+    "sha256": "353dcd14f04679202fd51dca584aeebf20de9d2ec081722388795ee85bb98bee",
+    "bytes": 143199,
+    "creator": "Dozenist",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:EnamelLayer04-11-07.jpg"
+  },
+  {
+    "id": "S02",
+    "state": "copied_original",
+    "path": "originals/pulp-histology.png",
+    "sha256": "49a7797be9f4bfe7fd7fd46376153102ac7eaf95fe847b5340f15666ab08a516",
+    "bytes": 2085585,
+    "creator": "Dododopamine; University of Dundee credit",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pulp_Histology_.png"
+  },
+  {
     "id": "S03",
     "state": "copied_original",
     "path": "originals/tooth-histology-nomarski.jpg",
@@ -21,11 +41,32 @@
   },
   {
     "id": "S05",
-    "state": "download_failed",
-    "errors": [
-      "HTTP Error 429: Too Many Requests (015d12c)",
-      "HTTP Error 429: Too Many Requests (015d12c)",
-      "HTTP Error 400: Use thumbnail sizes listed on https://w.wiki/GHai"
-    ]
+    "state": "copied_original",
+    "path": "originals/stained-decalcified-tooth.png",
+    "sha256": "2ee4891c76e4d4b0b2f268313ef21b390681c7fd08fd96cfe5f35b4db6e6a8e7",
+    "bytes": 174076,
+    "creator": "Natdental",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Dental_Pulp_of_a_stained_and_decalcified_tooth.png"
+  },
+  {
+    "id": "S06",
+    "state": "copied_original",
+    "path": "originals/gray-molar-plate.png",
+    "sha256": "977106e40ca38222c84e4823dd958ec524763c1915c39cf361efc6b643d448ef",
+    "bytes": 10612,
+    "creator": "Henry Vandyke Carter",
+    "license": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Gray1006.png"
+  },
+  {
+    "id": "S07",
+    "state": "copied_original",
+    "path": "originals/tooth-section-numbered.svg",
+    "sha256": "f5e24a39b5b4816bbf999f470168deaf2fa89ef3f540aa6b13587b7e1be3c238",
+    "bytes": 44141,
+    "creator": "Jak, derived from Asbestos",
+    "license": "Public domain (Commons license)",
+    "source": "https://commons.wikimedia.org/wiki/File:Tooth_Section_numbered.svg"
   }
 ]
