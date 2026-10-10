@@ -38,6 +38,7 @@ jobs:
           name: BioGlass-Licensed-Scientific-Images
           path: |
             assets/bioglass/02_sourced_real/originals/
+            assets/bioglass/02_sourced_real/review_copies/
             assets/bioglass/02_sourced_real/download_report.json
             assets/bioglass/02_sourced_real/LICENSES_AND_CREDITS.md
           if-no-files-found: warn

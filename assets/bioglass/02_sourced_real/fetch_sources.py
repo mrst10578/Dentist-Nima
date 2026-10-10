@@ -19,6 +19,8 @@ for x in sources:
  ]
  target=out/x["filename"]
  if target.is_file() and target.stat().st_size>300:
+  old=target.read_bytes()
+  report.append({"id":x["id"],"state":"copied_original","path":str(target.relative_to(p)),"sha256":hashlib.sha256(old).hexdigest(),"bytes":len(old),"creator":x["creator"],"license":x["license"],"source":x["source_url"]})
   print("EXISTS",x["id"],target.stat().st_size);continue
  errors=[];done=False
  for u in urls:
