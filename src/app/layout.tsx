@@ -8,6 +8,7 @@ import { siteConfig } from "@/lib/site";
 import "./globals.css";
 import "./editorial.css";
 import "./edition-v4.css";
+import "./studio-v5.css";
 import "./edition-v6.css";
 
 export const metadata: Metadata = {
