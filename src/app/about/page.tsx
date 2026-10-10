@@ -1,26 +1,26 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpLeft, ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpLeft } from "lucide-react";
 import { AssetFrame } from "@/components/asset-frame";
-export const metadata:Metadata={title:"درباره این پورتفولیو",description:"معرفی و مسیر علمی صاحب پورتفولیوی BioGlass Studio"};
+export const metadata:Metadata={title:"درباره این پورتفولیو",description:"درباره آرشیو علمی و دانشجویی BioGlass Studio"};
 export default function AboutPage(){
- return <main id="main-content" className="v6-subpage v6-about-page">
-  <div className="site-container">
-   <div className="v6-crumb"><Link href="/"><ArrowRight size={17}/> خانه</Link><span dir="ltr">ABOUT / THE PERSON BEHIND THE WORK</span></div>
-   <section className="v6-about-hero" aria-labelledby="about-title">
-    <div className="v6-about-primary"><span className="v6-kicker" dir="ltr">A PERSONAL ACADEMIC NOTEBOOK</span><h1 id="about-title">پشت هر اثر،<br/><em>یک مسیر یادگیری.</em></h1>
-     <p>این فضا برای نمایش و مستندسازی کارهای علمی یک دانشجوی دندان‌پزشکی طراحی شده است: پژوهش‌ها، فعالیت‌های دانشگاهی، پروژه‌ها و ارائه‌ها، در کنار منابع و فایل‌های مرتبط.</p>
-     <div className="v6-about-divider"/>
-     <span className="v6-about-status">اطلاعات فردی، دانشگاه و سوابق تنها پس از تأیید صاحب پورتفولیو منتشر می‌شوند.</span>
-     <Link href="/research">مرور آرشیو پژوهش‌ها <ArrowUpLeft size={18}/></Link>
-    </div>
-    <div className="v6-about-image"><div className="v6-about-image-header" dir="ltr"><span>PERSONAL PORTRAIT</span><span>PLACEHOLDER / 001</span></div><AssetFrame asset="portrait"/><div className="v6-about-image-caption">جایگاه تصویر اختصاصی و تأییدشده صاحب پورتفولیو</div></div>
-   </section>
-   <section className="v6-about-principles" aria-label="اصول این آرشیو">
-    <div><span dir="ltr">01 / DOCUMENT</span><h2>مستندسازی</h2><p>حفظ زمینه، منابع و مراحل هر اثر؛ نه صرفاً نمایش نتیجه نهایی.</p></div>
-    <div><span dir="ltr">02 / LEARN</span><h2>یادگیری</h2><p>ثبت مسیر شکل‌گیری ایده‌ها و پیشرفت علمی در طول تحصیل.</p></div>
-    <div><span dir="ltr">03 / SHARE</span><h2>اشتراک مسئولانه</h2><p>انتشار فقط محتوای علمی تأییدشده، با رعایت منبع و حریم خصوصی.</p></div>
-   </section>
-  </div>
+ return <main id="main-content" className="site-container atlas-about-page">
+   <div className="atlas-breadcrumb"><Link href="/"><ArrowRight size={17}/> صفحه اصلی</Link><span dir="ltr">ABOUT / PERSONAL PRACTICE</span></div>
+   <header className="atlas-about-header"><span dir="ltr">BIOGLASS / PERSONAL ACADEMIC ARCHIVE</span><h1>پشت هر اثر،<br/><em>مسیرِ یادگیری است.</em></h1></header>
+   <div className="atlas-about-layout">
+     <div className="atlas-about-image"><AssetFrame asset="portrait"/><span dir="ltr">PORTRAIT / TO BE PROVIDED</span></div>
+     <div className="atlas-about-copy">
+       <div className="atlas-small-heading" dir="ltr">01 / ABOUT THE PRACTICE</div>
+       <p className="atlas-about-lead">این پورتفولیو برای ثبت و نمایش مسیر علمی یک دانشجوی دندان‌پزشکی ساخته شده است.</p>
+       <p>از مرور منابع و پروژه‌های دانشگاهی تا تهیه اسلایدها و ارائه‌های علمی، هدف این است که هر فعالیت با زمینه، فرایند، منابع و فایل‌های مرتبطش در یک محل قابل‌مرور ثبت شود.</p>
+       <p>نام کامل، دانشگاه، بیوگرافی، سوابق و اطلاعات تماس تنها پس از تأیید صاحب پورتفولیو منتشر می‌شوند.</p>
+       <div className="atlas-about-values">
+        <div><span dir="ltr">01</span><strong>پژوهش</strong><small>مستندسازی پرسش‌ها و منابع</small></div>
+        <div><span dir="ltr">02</span><strong>ارائه</strong><small>ثبت آموخته‌ها و انتقال دانش</small></div>
+        <div><span dir="ltr">03</span><strong>آرشیو</strong><small>دسترسی منظم به آثار و پیوست‌ها</small></div>
+       </div>
+       <Link className="atlas-about-cta" href="/research">مشاهده آرشیو علمی <ArrowUpLeft size={18}/></Link>
+     </div>
+   </div>
  </main>;
 }
