@@ -1,0 +1,72 @@
+[
+  {
+    "id": "S01",
+    "src": "https://commons.wikimedia.org/wiki/File:EnamelLayer04-11-07.jpg",
+    "author": "Dozenist",
+    "license": "CC BY-SA 3.0",
+    "changes": "converted to WebP, scaled if needed",
+    "public": "/assets/bioglass/science/S01.webp",
+    "bytes": 43252,
+    "sha256": "64c8db7c4d08ab63447618d93e74f54433f0be8721735f5409ddf3cf61a0e250"
+  },
+  {
+    "id": "S02",
+    "src": "https://commons.wikimedia.org/wiki/File:Pulp_Histology_.png",
+    "author": "Dododopamine; University of Dundee credit",
+    "license": "CC BY-SA 4.0",
+    "changes": "converted to WebP, scaled if needed",
+    "public": "/assets/bioglass/science/S02.webp",
+    "bytes": 210284,
+    "sha256": "762fe405ee65d2239bc5c3a68ab08dabc5161d455e2614c02f4e9f5bbd744ca5"
+  },
+  {
+    "id": "S03",
+    "src": "https://commons.wikimedia.org/wiki/File:Tooth_(248_15)_Histologic_section_of_tooth.jpg",
+    "author": "Josef Reischig",
+    "license": "CC BY-SA 3.0",
+    "changes": "converted to WebP, scaled if needed",
+    "public": "/assets/bioglass/science/S03.webp",
+    "bytes": 715432,
+    "sha256": "da5aadbe587170dae953a3ba32a30de9b1b95c4ffbb3a27a5a18fa59c176d1f1"
+  },
+  {
+    "id": "S04",
+    "src": "https://commons.wikimedia.org/wiki/File:Diagram_of_tooth_structure.jpg",
+    "author": "Bunker / Turner (1924)",
+    "license": "US public domain",
+    "changes": "converted to WebP, scaled if needed",
+    "public": "/assets/bioglass/science/S04.webp",
+    "bytes": 165146,
+    "sha256": "ee855a7e618ef659726959df411fe3238631bf48c84a4643bc5140b74a395ef1"
+  },
+  {
+    "id": "S05",
+    "src": "https://commons.wikimedia.org/wiki/File:Dental_Pulp_of_a_stained_and_decalcified_tooth.png",
+    "author": "Natdental",
+    "license": "CC BY-SA 4.0",
+    "changes": "converted to WebP, scaled if needed",
+    "public": "/assets/bioglass/science/S05.webp",
+    "bytes": 18178,
+    "sha256": "97d7a79025d4a459b228ceff6ebe070cc76a888131c553e891be39878fa87d8b"
+  },
+  {
+    "id": "S06",
+    "src": "https://commons.wikimedia.org/wiki/File:Gray1006.png",
+    "author": "Henry Vandyke Carter",
+    "license": "Public domain",
+    "changes": "converted to WebP, scaled if needed",
+    "public": "/assets/bioglass/science/S06.webp",
+    "bytes": 12860,
+    "sha256": "3065e39a2fa61bfafa375cccc03489cf6a7a88161f9f3b0a441c737427505ad7"
+  },
+  {
+    "id": "S07",
+    "src": "https://commons.wikimedia.org/wiki/File:Tooth_Section_numbered.svg",
+    "author": "Jak, derived from Asbestos",
+    "license": "Public domain (Commons license)",
+    "changes": "unmodified source copy",
+    "public": "/assets/bioglass/science/S07.svg",
+    "bytes": 44141,
+    "sha256": "f5e24a39b5b4816bbf999f470168deaf2fa89ef3f540aa6b13587b7e1be3c238"
+  }
+]
