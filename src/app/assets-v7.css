@@ -44,3 +44,18 @@
 @media(max-width:900px){.v7-sources-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.v7-hero-picture{height:470px}}
 @media(max-width:700px){.v7-motion-plate{grid-template-columns:1fr;gap:21px}.v7-motion-image{aspect-ratio:16/10}.v7-hero-picture{height:430px}.v7-hero-picture img{object-position:center 40%}.v7-collection-banner{display:block}.v7-collection-banner-image{width:100%;aspect-ratio:16/8;margin-bottom:20px}.v7-sources-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.v7-motion-image img,.v7-hero-picture img{transition:none!important;animation:none!important}}
+
+
+/* G03 Edition 08: accessible viewport-activated cinematic motion. */
+.v8-motion-video-wrap{position:relative;isolation:isolate;width:100%;height:100%;overflow:hidden;background:#10292a}
+.v8-motion-poster,.v8-motion-video{position:absolute;inset:0;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center 48%!important;display:block}
+.v8-motion-poster{z-index:0}
+.v8-motion-video{z-index:1}
+.v8-motion-mark{position:absolute;z-index:2;top:17px;left:19px;color:rgba(248,242,226,.88);font:700 10px "DM Sans",sans-serif;letter-spacing:.12em;text-shadow:0 2px 6px #132826}
+.v8-motion-toggle{position:absolute;z-index:3;bottom:17px;left:19px;padding:9px 15px;border:1px solid rgba(233,244,234,.55);color:#f9f4e9;background:rgba(8,33,34,.78);font-size:11px;font-weight:700;cursor:pointer;transition:background .2s}
+.v8-motion-toggle:hover,.v8-motion-toggle:focus-visible{background:rgba(26,71,66,.94);outline-offset:3px}
+.v8-motion-video-wrap .v8-motion-poster{max-width:none}
+@media(prefers-reduced-motion:reduce){
+  .v8-motion-video{display:none}
+  .v8-motion-toggle{display:none}
+}
