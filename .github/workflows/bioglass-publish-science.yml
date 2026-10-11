@@ -1,0 +1,56 @@
+name: Prepare credited BioGlass science plates
+on:
+  push:
+    branches: [feature/bioglass-asset-first-skeleton]
+    paths: [".github/workflows/bioglass-publish-science.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  prepare-science:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install image codec
+        run: python3 -m pip install pillow
+      - name: Convert license-tracked public domain and CC sources to site assets
+        run: |
+          python3 - <<'PY'
+          import json, pathlib, shutil, hashlib
+          from PIL import Image, ImageOps
+          root=pathlib.Path('assets/bioglass/02_sourced_real')
+          dest=pathlib.Path('public/assets/bioglass/science')
+          dest.mkdir(parents=True,exist_ok=True)
+          sources=json.loads((root/'sources.json').read_text('utf-8'))
+          record=[]
+          for item in sources:
+            src=root/'originals'/item['filename']
+            assert src.is_file(),str(src)
+            if src.suffix.lower()=='.svg':
+              out=dest/(item['id']+'.svg')
+              shutil.copyfile(src,out)
+              changes='unmodified source copy'
+            else:
+              out=dest/(item['id']+'.webp')
+              with Image.open(src) as loaded:
+                im=ImageOps.exif_transpose(loaded)
+                im.thumbnail((1800,1800))
+                if im.mode not in ('RGB','RGBA'):im=im.convert('RGB')
+                im.save(out,'WEBP',quality=86,method=6)
+              changes='converted to WebP, scaled if needed'
+            record.append(dict(id=item['id'],src=item['source_url'],author=item['creator'],license=item['license'],changes=changes,public='/assets/bioglass/science/'+out.name,bytes=out.stat().st_size,sha256=hashlib.sha256(out.read_bytes()).hexdigest()))
+          (dest/'CREDITS.json').write_text(json.dumps(record,ensure_ascii=False,indent=2)+'\n','utf-8')
+          assert len(record)==7
+          print("Credited science plates prepared:",len(record))
+          PY
+      - name: Commit media and credits without touching original evidence files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/assets/bioglass/science
+          if ! git diff --cached --quiet; then
+            git commit -m "assets: publish seven credited and optimized science reference plates"
+            git pull --rebase origin feature/bioglass-asset-first-skeleton
+            git push origin HEAD:feature/bioglass-asset-first-skeleton
+          fi
