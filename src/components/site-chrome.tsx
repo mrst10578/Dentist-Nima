@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpLeft, Menu } from "lucide-react";
 
 const navigation = [
@@ -10,10 +11,10 @@ const navigation = [
   { label: "درباره", href: "/about" },
 ];
 
-export function Brand() {
+export function Brand({ footer = false }: { footer?: boolean }) {
   return (
     <Link href="/" className="brand" aria-label="BioGlass Studio، صفحه اصلی">
-      <span className="brand-symbol" dir="ltr">B<span>.</span></span>
+      <span className="brand-symbol v7-brand-symbol" dir="ltr"><Image src={footer?"/assets/bioglass/G14_monogram-dark.webp":"/assets/bioglass/G15_monogram-light.webp"} width={46} height={46} alt="" aria-hidden="true" priority={!footer}/></span>
       <span className="brand-name" dir="ltr">BIOGLASS <span>ACADEMIC PORTFOLIO</span></span>
     </Link>
   );
@@ -50,7 +51,7 @@ export function Footer() {
     <footer className="site-footer">
       <div className="site-container footer-top">
         <div>
-          <Brand />
+          <Brand footer />
           <p>یک آرشیو شخصی برای ثبت پژوهش‌ها، پروژه‌ها و ارائه‌های دانشگاهی.</p>
         </div>
         <div className="footer-links">

@@ -1,11 +1,2 @@
-
-export default function Loading() {
-  return (
-    <main id="main-content" className="site-container loading-main" aria-busy="true">
-      <div className="skeleton-block" />
-      <div className="skeleton-block skeleton-short" />
-      <div className="skeleton-block skeleton-wide" />
-      <span className="sr-only">در حال بارگذاری</span>
-    </main>
-  );
-}
+import Image from "next/image";
+export default function Loading(){return <main id="main-content" className="v7-loading"><Image src="/assets/bioglass/G20_loading-mark.webp" width={100} height={100} alt="" aria-hidden="true" priority/><p>در حال آماده‌سازی آرشیو...</p></main>;}

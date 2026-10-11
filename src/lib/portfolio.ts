@@ -19,7 +19,18 @@ export type AssetKey = keyof typeof assetCatalog;
 
 // Keep null until a reviewed, optimized asset is committed under public/assets.
 // This prevents broken images and makes placeholder-to-asset replacement intentional.
-export const activeAssets: Partial<Record<AssetKey, string>> = {};
+export const activeAssets: Partial<Record<AssetKey, string>> = {
+  "hero-molar": "/assets/bioglass/G01_hero-desktop.webp",
+  "research-enamel": "/assets/bioglass/G04_research-enamel.webp",
+  "research-microscopy": "/assets/bioglass/G05_research-histology.webp",
+  "project-anatomy": "/assets/bioglass/G09_project-materials.webp",
+  "project-biomaterial": "/assets/bioglass/G10_project-lab.webp",
+  "presentation-pulp": "/assets/bioglass/G07_presentation-paper.webp",
+  "presentation-crown": "/assets/bioglass/G08_presentation-light.webp",
+  "gallery-laboratory": "/assets/bioglass/G11_gallery-specimen.webp",
+  "gallery-model": "/assets/bioglass/G12_gallery-detail.webp",
+  // Portrait intentionally disabled: G13 is a synthetic concept, not the owner's likeness.
+};
 
 export const collections: Record<CollectionId, {
   title: string;

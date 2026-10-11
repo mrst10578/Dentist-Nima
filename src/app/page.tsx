@@ -1,7 +1,7 @@
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowDown, ArrowLeft, ArrowUpLeft } from "lucide-react";
-import { HeroCanvas } from "@/components/three/hero-canvas";
 import { PortfolioCard } from "@/components/portfolio-card";
 import { entries } from "@/lib/portfolio";
 
@@ -33,7 +33,10 @@ export default function Home() {
         <div className="atlas-hero-art" aria-label="اثر بصری انتزاعی با الهام از ساختار دندان">
           <div className="atlas-art-frame">
             <div className="atlas-art-top" dir="ltr"><span>PLATE NO. 001</span><span>FORM & MATERIAL</span></div>
-            <HeroCanvas />
+            <picture className="v7-hero-picture">
+              <source media="(max-width: 700px)" srcSet="/assets/bioglass/G02_hero-mobile.webp" />
+              <Image src="/assets/bioglass/G01_hero-desktop.webp" width={1672} height={941} priority sizes="(max-width:850px) 100vw, 45vw" alt="مجسمه انتزاعی شیشه و سرامیک با الهام از فرم دندان؛ تصویر هنری و نه مدل بالینی" />
+            </picture>
             <div className="atlas-art-footer" dir="ltr"><span>AN EXPERIMENT IN FORM</span><span>NOT A CLINICAL MODEL</span></div>
             <span className="atlas-art-stamp" aria-hidden="true" dir="ltr">BG.</span>
           </div>
@@ -52,6 +55,10 @@ export default function Home() {
       <div className="atlas-statement-bottom"><span>این پورتفولیو به مرور با آثار واقعی صاحب آن تکمیل می‌شود.</span><span dir="ltr">THE PRACTICE OF CURIOSITY</span></div>
     </section>
 
+    <section className="site-container v7-motion-plate" aria-label="مطالعه تصویری فرم و نور">
+      <div className="v7-motion-image"><Image src="/assets/bioglass/G03_hero-loop-keyframe.webp" width={1122} height={1402} sizes="(max-width:700px) 90vw, 36vw" alt="فریم هنری ثابت برای مطالعه نور و فرم در مجموعه BioGlass" loading="lazy" /></div>
+      <div className="v7-motion-copy"><span dir="ltr">PLATE 03 / MATERIAL MOTION STUDY</span><strong>فرم، نور و ماده.</strong><p>مطالعه بصری مفهومی از مینای دندان و شیشه زیستی. این فریم ثابت است و ادعای نمایش آزمایش واقعی ندارد.</p></div>
+    </section>
     <section className="atlas-index-section" id="atlas-index" aria-labelledby="atlas-index-heading">
       <div className="site-container">
         <div className="atlas-section-heading">

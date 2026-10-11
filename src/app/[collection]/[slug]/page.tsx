@@ -10,7 +10,7 @@ export async function generateMetadata({params}:Props):Promise<Metadata>{
  const {collection,slug}=await params;
  if(!isCollectionId(collection))return{};
  const item=getEntry(collection,slug);
- return item?{title:item.title,description:item.description}:{};
+ return item?{title:item.title,description:item.description,openGraph:{images:[{url:collection==="research"?"/assets/bioglass/G18_opengraph-research.webp":"/assets/bioglass/G17_opengraph-main.webp",width:1672,height:941}]}}:{};
 }
 export default async function DetailPage({params}:Props){
  const {collection,slug}=await params;
