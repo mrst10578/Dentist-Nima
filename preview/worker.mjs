@@ -180,7 +180,7 @@ export default {
   const url=new URL(request.url);
   const path=decodeURIComponent(url.pathname).replace(/\/+$/,'')||'/';
   if(path.startsWith('/assets/bioglass/') && /^\/assets\/bioglass\/(?:G(?:0[1-9]|1[0-9]|20)_[a-z0-9-]+\.(?:webp|mp4|webm)|science\/S0[1-7]\.(?:webp|svg))$/.test(path)) {
-    const origin='https://raw.githubusercontent.com/mrst10578/Dentist-Nima/608dc92da7242e12b9f05ec124f88592047b2579/public'+path;
+    const origin='https://raw.githubusercontent.com/mrst10578/Dentist-Nima/9ebc407b40b303690c2ea69f25a496a2d22e2960/public'+path;
     const res=await fetch(origin,{headers:{'Accept':path.endsWith('.webm')?'video/webm':path.endsWith('.mp4')?'video/mp4':'image/*'}});
     if(!res.ok)return new Response('Asset missing',{status:404});
     return new Response(res.body,{headers:{'content-type':path.endsWith('.svg')?'image/svg+xml':path.endsWith('.webm')?'video/webm':path.endsWith('.mp4')?'video/mp4':'image/webp','cache-control':'public,max-age=3600','x-content-type-options':'nosniff'}});
