@@ -33,7 +33,7 @@ export default function Home() {
         <div className="atlas-hero-art" aria-label="اثر بصری انتزاعی با الهام از ساختار دندان">
           <div className="atlas-art-frame">
             <div className="atlas-art-top" dir="ltr"><span>PLATE NO. 001</span><span>FORM & MATERIAL</span></div>
-            <picture className="v7-hero-picture">
+            <picture data-hero-visual className="v7-hero-picture">
               <source media="(max-width: 700px)" srcSet="/assets/bioglass/G02_hero-mobile.webp" />
               <Image src="/assets/bioglass/G01_hero-desktop.webp" width={1672} height={941} priority sizes="(max-width:850px) 100vw, 45vw" alt="مجسمه انتزاعی شیشه و سرامیک با الهام از فرم دندان؛ تصویر هنری و نه مدل بالینی" />
             </picture>
