@@ -1,0 +1,55 @@
+name: Render G03 Cinematic Loop
+
+on:
+  push:
+    branches:
+      - feature/bioglass-asset-first-skeleton
+    paths:
+      - ".github/workflows/bioglass-render-g03.yml"
+      - "public/assets/bioglass/G03_hero-loop-keyframe.webp"
+      - "assets/bioglass/G03_MOTION_PLAN.md"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  render-g03:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Verify encoder
+        run: |
+          command -v ffmpeg
+          command -v ffprobe
+          test -s public/assets/bioglass/G03_hero-loop-keyframe.webp
+      - name: Encode seamless 6s G03 motion in MP4 and WebM
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd public/assets/bioglass
+          SOURCE="G03_hero-loop-keyframe.webp"
+          FILTER="zoompan=z='1.05+0.016*(1-cos(2*PI*on/144))/2':x='iw/2-iw/zoom/2+11*sin(2*PI*on/144)':y='ih/2-ih/zoom/2+10*cos(2*PI*on/144)':d=1:s=960x600:fps=24,eq=brightness='0.008*sin(2*PI*t/6)':eval=frame,format=yuv420p"
+          ffmpeg -hide_banner -loglevel warning -y -loop 1 -framerate 24 -i "$SOURCE" \
+            -vf "$FILTER" -frames:v 144 -an -c:v libx264 -preset veryfast -crf 24 \
+            -pix_fmt yuv420p -movflags +faststart G03_cinematic-loop.mp4
+          ffmpeg -hide_banner -loglevel warning -y -loop 1 -framerate 24 -i "$SOURCE" \
+            -vf "$FILTER" -frames:v 144 -an -c:v libvpx-vp9 -deadline realtime -cpu-used 5 -b:v 0 -crf 36 \
+            G03_cinematic-loop.webm
+          test "$(stat -c%s G03_cinematic-loop.mp4)" -lt 1500000
+          test "$(stat -c%s G03_cinematic-loop.webm)" -lt 1500000
+          ffprobe -v error -show_entries format=duration,size -of json G03_cinematic-loop.mp4
+          ffprobe -v error -show_entries format=duration,size -of json G03_cinematic-loop.webm
+      - name: Commit G03 animation to draft branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/assets/bioglass/G03_cinematic-loop.mp4 public/assets/bioglass/G03_cinematic-loop.webm
+          if ! git diff --cached --quiet; then
+            git commit -m "assets(G03): publish optimized six-second MP4 and WebM seamless cinematic loops"
+            git pull --rebase origin feature/bioglass-asset-first-skeleton
+            git push origin HEAD:feature/bioglass-asset-first-skeleton
+          fi
