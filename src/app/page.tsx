@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowDown, ArrowLeft, ArrowUpLeft } from "lucide-react";
 import { PortfolioCard } from "@/components/portfolio-card";
+import { CinematicLoop } from "@/components/cinematic-loop";
 import { entries } from "@/lib/portfolio";
 
 const departments = [
@@ -56,8 +57,8 @@ export default function Home() {
     </section>
 
     <section className="site-container v7-motion-plate" aria-label="مطالعه تصویری فرم و نور">
-      <div className="v7-motion-image"><Image src="/assets/bioglass/G03_hero-loop-keyframe.webp" width={1122} height={1402} sizes="(max-width:700px) 90vw, 36vw" alt="فریم هنری ثابت برای مطالعه نور و فرم در مجموعه BioGlass" loading="lazy" /></div>
-      <div className="v7-motion-copy"><span dir="ltr">PLATE 03 / MATERIAL MOTION STUDY</span><strong>فرم، نور و ماده.</strong><p>مطالعه بصری مفهومی از مینای دندان و شیشه زیستی. این فریم ثابت است و ادعای نمایش آزمایش واقعی ندارد.</p></div>
+      <div className="v7-motion-image"><CinematicLoop /></div>
+      <div className="v7-motion-copy"><span dir="ltr">PLATE 03 / MATERIAL MOTION STUDY</span><strong>فرم، نور و ماده.</strong><p>مطالعه بصری مفهومی از مینای دندان و شیشه زیستی. یک لوپ هنری شش‌ثانیه‌ای با حرکت آرام دوربین و نور؛ اثر مفهومی است و تصویر آزمایش واقعی نیست.</p></div>
     </section>
     <section className="atlas-index-section" id="atlas-index" aria-labelledby="atlas-index-heading">
       <div className="site-container">
