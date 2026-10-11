@@ -1,0 +1,122 @@
+[
+  {
+    "id": "G01",
+    "path": "/assets/bioglass/G01_hero-desktop.webp",
+    "bytes": 126502,
+    "sha256": "8a1482d2750a279dc39cc4f326575005ecd1106cf10faaf595ffd31055e4fa97"
+  },
+  {
+    "id": "G02",
+    "path": "/assets/bioglass/G02_hero-mobile.webp",
+    "bytes": 190524,
+    "sha256": "1948fa6c3fa48136d47b1e0c121554c185b92312d6fcc12953d1d1bab1055b2c"
+  },
+  {
+    "id": "G03",
+    "path": "/assets/bioglass/G03_hero-loop-keyframe.webp",
+    "bytes": 192590,
+    "sha256": "d6f1503037e0e1753c05eda60356f0faf9d3ff4e7cb31eb44109623ec7a3b3c6"
+  },
+  {
+    "id": "G04",
+    "path": "/assets/bioglass/G04_research-enamel.webp",
+    "bytes": 221924,
+    "sha256": "91bb9e57efaec3705bd8d38e60597875756c54994b23006069a9b87821697a9e"
+  },
+  {
+    "id": "G05",
+    "path": "/assets/bioglass/G05_research-histology.webp",
+    "bytes": 338542,
+    "sha256": "bab33ab2c44442d23810dc550025d8593db5b0308d3fea6d6dc7faac273073e3"
+  },
+  {
+    "id": "G06",
+    "path": "/assets/bioglass/G06_research-biomaterials.webp",
+    "bytes": 285734,
+    "sha256": "99a3a093b45eda7a9e2c4b864804bfdcefa2c32ab5efe0f138917c64c21bd881"
+  },
+  {
+    "id": "G07",
+    "path": "/assets/bioglass/G07_presentation-paper.webp",
+    "bytes": 155792,
+    "sha256": "f60a1f562ff91bc97bbbdd8563aee96158e896eed81a92b002a3871adc530462"
+  },
+  {
+    "id": "G08",
+    "path": "/assets/bioglass/G08_presentation-light.webp",
+    "bytes": 193218,
+    "sha256": "847882275953ebb5410404ae7b1bca8364e9ec22e6b41e322cfda197be15da38"
+  },
+  {
+    "id": "G09",
+    "path": "/assets/bioglass/G09_project-materials.webp",
+    "bytes": 270640,
+    "sha256": "ee0486226c526205179ab4759600d0dd0132f655d340227ba877fa6101980a0f"
+  },
+  {
+    "id": "G10",
+    "path": "/assets/bioglass/G10_project-lab.webp",
+    "bytes": 246196,
+    "sha256": "2c783494a86f4c6542c8f026403c71ad04e4c3cdb56b2f68040b4d249b085c1d"
+  },
+  {
+    "id": "G11",
+    "path": "/assets/bioglass/G11_gallery-specimen.webp",
+    "bytes": 252264,
+    "sha256": "001fcf2ca203bd08749f2b94396bd9cf0517fad7f9c196795c4ec962e214c4aa"
+  },
+  {
+    "id": "G12",
+    "path": "/assets/bioglass/G12_gallery-detail.webp",
+    "bytes": 224688,
+    "sha256": "4f9d8fa94d627d3cfd4231de3d513a7edf79db42142bc1498621d59b33c240cb"
+  },
+  {
+    "id": "G13",
+    "path": "/assets/bioglass/G13_about-concept.webp",
+    "bytes": 170652,
+    "sha256": "648a54d6928b182d170159bddd0c3931452e9d3f0c41456bc95d2a81a987c488"
+  },
+  {
+    "id": "G14",
+    "path": "/assets/bioglass/G14_monogram-dark.webp",
+    "bytes": 84162,
+    "sha256": "9a68859c6fce356f28e359cf37351867791541df1c4bf977bc60f9a188e1b7f8"
+  },
+  {
+    "id": "G15",
+    "path": "/assets/bioglass/G15_monogram-light.webp",
+    "bytes": 140382,
+    "sha256": "99470750f40808e1af05a586abbf619b6939a948c3957ccb54a3208a2e9609d3"
+  },
+  {
+    "id": "G16",
+    "path": "/assets/bioglass/G16_footer-lightscape.webp",
+    "bytes": 201824,
+    "sha256": "59336c16af7b02ad2be7240f80d080355072a87242ba938691fa56f6b6830d1f"
+  },
+  {
+    "id": "G17",
+    "path": "/assets/bioglass/G17_opengraph-main.webp",
+    "bytes": 211036,
+    "sha256": "76281f985e56e5d00b8649efa4237e49adadf5a65c8bd4a6dbfde65ae9deaee1"
+  },
+  {
+    "id": "G18",
+    "path": "/assets/bioglass/G18_opengraph-research.webp",
+    "bytes": 237844,
+    "sha256": "f8ccb609cc467881ad54b07e5f51caed57c780c001c86e01e30ba7d84a81ed94"
+  },
+  {
+    "id": "G19",
+    "path": "/assets/bioglass/G19_not-found.webp",
+    "bytes": 169646,
+    "sha256": "f03c4bd6960772ff78dd2a84b0e98c0bdd8378ff831b645c13cea2133cbaf4a8"
+  },
+  {
+    "id": "G20",
+    "path": "/assets/bioglass/G20_loading-mark.webp",
+    "bytes": 165912,
+    "sha256": "09aff6dd3e3baf3ff39b3b7b3e855dcda9b297f07871629bc8663f1f9f52373f"
+  }
+]
