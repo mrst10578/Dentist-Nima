@@ -54,6 +54,13 @@ jobs:
           git add public/assets/bioglass/G03_cinematic-loop.mp4 public/assets/bioglass/G03_cinematic-loop.webm
           if ! git diff --cached --quiet; then
             git commit -m "assets(G03): publish optimized six-second MP4 and WebM seamless cinematic loops"
-            git pull --rebase origin feature/bioglass-asset-first-skeleton
-            git push origin HEAD:feature/bioglass-asset-first-skeleton
+            for attempt in 1 2 3 4 5; do
+              git fetch origin feature/bioglass-asset-first-skeleton
+              git rebase FETCH_HEAD
+              if git push origin HEAD:feature/bioglass-asset-first-skeleton; then
+                echo "G03 videos published"; exit 0
+              fi
+              sleep 3
+            done
+            echo "G03 video push exhausted retries" >&2; exit 1
           fi
