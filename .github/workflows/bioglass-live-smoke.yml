@@ -1,0 +1,45 @@
+name: Smoke check BioGlass ZH3 live preview
+on:
+  push:
+    branches: [feature/bioglass-asset-first-skeleton]
+    paths: [".github/workflows/bioglass-live-smoke.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+jobs:
+  live-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Verify deployed pages, media and attribution
+        run: |
+          python3 - <<'PY'
+          import urllib.request
+          root="https://bioglass-nima-preview.zh13.workers.dev"
+          headers={"User-Agent":"BioGlass-ZH3-Smoke/1.0"}
+          for path, phrases in [
+            ("/",["G01_hero-desktop.webp","G02_hero-mobile.webp","G03_hero-loop-keyframe.webp"]),
+            ("/research",["G06_research-biomaterials.webp","G04_research-enamel.webp","G05_research-histology.webp"]),
+            ("/gallery",["S01.webp","S07.svg","CC BY-SA","G11_gallery-specimen.webp"]),
+            ("/about",["G13_about-concept.webp","این فرد صاحب"]),
+          ]:
+            with urllib.request.urlopen(urllib.request.Request(root+path,headers=headers),timeout=25) as response:
+              assert response.status==200,(path,response.status)
+              body=response.read().decode("utf-8")
+            for phrase in phrases: assert phrase in body,(path,phrase)
+            print("PAGE",path,"OK")
+          for path,magic in [
+            ("/assets/bioglass/G01_hero-desktop.webp",b"WEBP"),
+            ("/assets/bioglass/G14_monogram-dark.webp",b"WEBP"),
+            ("/assets/bioglass/science/S02.webp",b"WEBP")
+          ]:
+            with urllib.request.urlopen(urllib.request.Request(root+path,headers=headers),timeout=30) as response:
+              data=response.read()
+              assert response.status==200 and data[8:12]==magic,(path,response.status,len(data),data[:40])
+            print("MEDIA",path,len(data),"OK")
+          with urllib.request.urlopen(urllib.request.Request(root+"/assets/bioglass/science/S07.svg",headers=headers),timeout=25) as response:
+            body=response.read(250)
+            assert b"<svg" in body or b"<?xml" in body
+          print("S07 SVG reference OK")
+          PY
