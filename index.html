@@ -491,6 +491,20 @@ body{background:var(--paper);color:var(--ink)}
 @media(max-width:850px){.hero-asset{width:min(66%,320px)}.end-note:before{left:-16%;top:-10%;width:240px;height:240px}.end-note:after{right:-10%;bottom:-10%;width:170px;height:170px}.visual-asset{width:66%;height:66%}.cover-research-asset{width:80%;height:58%}}
 @media(max-width:560px){.hero-asset{width:min(60%,230px)}.visual-asset{width:62%;height:62%}.cover-research-asset{width:82%;height:52%}}
 
+/* Give the translucent porcelain project cover a readable, rich backdrop. */
+.work-visual.cover-project,
+.work-card.color-blue .work-visual.cover-project,
+.work-card.color-ice .work-visual.cover-project,
+.work-card.color-lavender .work-visual.cover-project,
+.work-card.color-sand .work-visual.cover-project,
+.work-card.color-gray .work-visual.cover-project {
+  background: radial-gradient(circle at 50% 43%, #3774a9 0%, #1e466b 56%, #122d46 100%) !important;
+}
+.work-visual.cover-project .visual-no,
+.work-visual.cover-project .visual-type { color:#d8ebff; }
+.work-visual.cover-project .visual-orbit { border-color:rgba(183,220,255,.19);box-shadow:0 0 0 44px rgba(255,255,255,.04),0 0 0 85px rgba(255,255,255,.02); }
+.work-visual.cover-project .visual-asset { filter:drop-shadow(0 12px 24px rgba(0,0,0,.22)); }
+
 </style>
 </head>
 <body>
